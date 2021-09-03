@@ -8,18 +8,16 @@ import { AnimatePresence } from "framer-motion";
 
 function App() {
   return (
-    // <BrowserRouter basename="/">
-    <>
+    <BrowserRouter basename="/">
       <Header />
       <Grid />
-      {/* // <AnimatePresence> */}
-        {/* // <Switch> */}
-          {/* // <Route path="/" component={HomePage} exact></Route> */}
-          {/* // <Route path={`/projekt/:id`} component={ProjectView}></Route> */}
-        {/* // </Switch> */}
-      {/* // </AnimatePresence> */}
-    {/* // </BrowserRouter> */}
-    </>
+      <AnimatePresence>
+        <Switch>
+          <Route path="/" component={HomePage} exact></Route>
+          <Route path={`/projekt/:id`} component={ProjectView}></Route>
+        </Switch>
+      </AnimatePresence>
+    </BrowserRouter>
   );
 }
 
