@@ -61,7 +61,7 @@ function infoModal({ open, style, close }) {
                     <div>
                       {" "}
                       <a href="mailto:Henri.kutsar@gmail.com">
-                        Henri.kutsar@gmail.com
+                        info@henrikutsar.ee
                       </a>
                     </div>
                   </div>
