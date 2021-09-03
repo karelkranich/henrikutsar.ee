@@ -76,7 +76,7 @@ function infoModal({ open, style, close }) {
                       <a href="tel:372-529-3741">+372 529 3741</a>{" "}
                       <div>
                         <a href="mailto:Henri.kutsar@gmail.com">
-                          Henri.kutsar@gmail.com
+                          info@henrikutsar.ee
                         </a>{" "}
                       </div>
                     </div>
