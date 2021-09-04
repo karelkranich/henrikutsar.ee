@@ -264,6 +264,10 @@
     padding-bottom: 22px;
     justify-content: center;
     width: 100%;
+    /* border: 5px solid red; */
+  }
+
+  .descriptions-container {
   }
 
   .project-details {

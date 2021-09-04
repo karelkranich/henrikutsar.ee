@@ -39,16 +39,19 @@ export default function ProjectView({ open, style, close }) {
     fetchData();
   }, [id]);
 
-  console.log(posts);
+  console.log(id);
 
-  const descriptionsWidth = {
-    width: dimensions.width,
-    height: "100%",
-  };
+  // const descriptionsWidth = {
+  //   width: dimensions.width,
+  //   height: "100%",
+  // };
 
   const DESCRIPTIONS_CONTAINER = {
     fontStyle: "normal",
     fontWeight: "400",
+    border: "5px solid red",
+    width: dimensions.width,
+    height: "100%",
   };
 
   const LONGER_PARAGRAPH_DESCRIPTION = {
@@ -115,7 +118,7 @@ export default function ProjectView({ open, style, close }) {
                 // do not close projectview if anything inside modal content is clicked
                 e.stopPropagation();
               }}
-              style={descriptionsWidth}
+              style={DESCRIPTIONS_CONTAINER}
               className="descriptions-container"
             >
               <div>
