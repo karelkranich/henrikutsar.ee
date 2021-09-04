@@ -21,7 +21,7 @@ export default function Projects() {
     fetchData();
   }, []);
 
-  console.log(posts);
+  
 
 
   const onLinkClick = () => {
