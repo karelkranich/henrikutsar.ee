@@ -39,7 +39,7 @@ export default function ProjectView({ open, style, close }) {
     fetchData();
   }, [id]);
 
-  console.log(id);
+  console.log(posts);
 
   // const descriptionsWidth = {
   //   width: dimensions.width,
