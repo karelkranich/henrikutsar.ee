@@ -13,13 +13,16 @@ export default function Projects() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const results = await axios("/wp-json/wp/v2/projektid/");
-
-      setPosts(results.data);
+      const results = await axios(
+        "http://henrikutsar.ee/admin/wp-json/wp/v2/projektid"
+      );
+      setPosts(results);
     };
 
     fetchData();
   }, []);
+
+  console.log(posts);
 
   const onLinkClick = () => {
     document.querySelector("body").style.overflow = "hidden";
