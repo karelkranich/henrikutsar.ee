@@ -14,7 +14,7 @@ export default function Projects() {
   useEffect(() => {
     const fetchData = async () => {
       const results = await axios(
-        "http://henrikutsar.ee/admin/wp-json/wp/v2/projektid"
+        "https://henrikutsar.ee/admin/wp-json/wp/v2/projektid"
       );
       setPosts(results);
     };
