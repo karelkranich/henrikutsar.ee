@@ -51,7 +51,7 @@ export default function ProjectView({ open, style, close }) {
     fontStyle: "normal",
     fontWeight: "400",
     // border: "5px solid red",
-    width: "1500px",
+    width: "1600px",
     height: "100%",
   };
 
