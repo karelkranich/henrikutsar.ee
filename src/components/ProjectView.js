@@ -193,11 +193,8 @@ export default function ProjectView({ open, style, close }) {
             exit={{ transform: "translateY(0%)" }}
             transition={{ duration: 0.1 }}
           >
-            <div
-              style={PROJECT_VIEW_BACKGROUNDCOLOR}
-              className="main-landing-picture-container"
-            >
-              <div className="landing-picture-container">
+            <div className="main-landing-picture-container">
+              <div ref={targetRef} className="landing-picture-container">
                 <img className="landing-picture" src={pilt} alt="Savant" />
               </div>
             </div>
