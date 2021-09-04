@@ -41,6 +41,9 @@ export default function ProjectView({ open, style, close }) {
     fetchData();
   }, [id]);
 
+  const pilt =
+    "https://energyeducation.ca/wiki/images/b/bd/9103296900_0d383feabf_z.jpg";
+
   console.log(posts);
 
   // const descriptionsWidth = {
@@ -51,7 +54,7 @@ export default function ProjectView({ open, style, close }) {
   const DESCRIPTIONS_CONTAINER = {
     fontStyle: "normal",
     fontWeight: "400",
-    border: "5px solid red",
+    // border: "5px solid red",
     width: dimensions.width,
     height: "100%",
   };
@@ -106,7 +109,7 @@ export default function ProjectView({ open, style, close }) {
                 }}
                 className="landing-picture-container"
               >
-                <img className="landing-picture" src={teine} alt="Savant" />
+                <img className="landing-picture" src={pilt} alt="Savant" />
               </div>
             </div>
           </motion.div>
