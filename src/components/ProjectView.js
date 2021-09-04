@@ -50,8 +50,9 @@ export default function ProjectView({ open, style, close }) {
   const DESCRIPTIONS_CONTAINER = {
     fontStyle: "normal",
     fontWeight: "400",
-    // border: "5px solid red",
-    width: dimensions.width,
+    border: "5px solid red",
+    width: "1130px",
+    // width:dimensions.width,
     height: "100%",
   };
 
