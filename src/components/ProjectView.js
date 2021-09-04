@@ -41,7 +41,6 @@ export default function ProjectView({ open, style, close }) {
 
   console.log(posts);
 
-
   const descriptionsWidth = {
     width: dimensions.width,
     height: "100%",
