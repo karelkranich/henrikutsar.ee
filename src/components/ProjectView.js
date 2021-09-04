@@ -71,7 +71,7 @@ export default function ProjectView({ open, style, close }) {
 
   const PROJECT_VIEW_BACKGROUNDCOLOR = {
     backgroundColor: posts.projektivaate_taustavarv,
-    width:"100%"
+    // width:""
   };
 
   // GO BACK TO PREVIOUS PAGE, CHANGE BODY OVERFLOW TO UNSET
