@@ -14,7 +14,7 @@ function App() {
       <AnimatePresence>
         <Switch>
           <Route path="/" component={HomePage} exact></Route>
-          <Route path={`/projekt/:id`} component={ProjectView}></Route>
+          <Route path={`/projektid/:id`} component={ProjectView}></Route>
         </Switch>
       </AnimatePresence>
     </BrowserRouter>
