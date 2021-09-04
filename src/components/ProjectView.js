@@ -198,7 +198,7 @@ export default function ProjectView({ open, style, close }) {
               className="main-landing-picture-container"
             >
               <div className="landing-picture-container">
-                <img className="landing-picture" src={teine} alt="Savant" />
+                <img className="landing-picture" src={pilt} alt="Savant" />
               </div>
             </div>
             {/* FIRST PARAGRAPHS AFTER PROJECT PICTURE*/}
