@@ -31,11 +31,12 @@ export default function ProjectView({ open, style, close }) {
     }
 
     const fetchData = async () => {
-      const results = await axios(`https://henrikutsar.ee/admin/wp-json/wp/v2/projektid/${id}`);
+      const results = await axios(
+        `https://henrikutsar.ee/admin/wp-json/wp/v2/projektid/${id}`
+      );
 
       setPosts(results.data.acf);
     };
-    
 
     fetchData();
   }, [id]);
@@ -51,8 +52,7 @@ export default function ProjectView({ open, style, close }) {
     fontStyle: "normal",
     fontWeight: "400",
     border: "5px solid red",
-    width: "1130px",
-    // width:dimensions.width,
+    width: dimensions.width,
     height: "100%",
   };
 
