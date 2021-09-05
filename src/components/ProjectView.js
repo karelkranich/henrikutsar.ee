@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ReactDom from "react-dom";
-import teine from "../images/teine.jpg";
+
 import InfoContact from "./InfoContact";
 import axios from "axios";
 import kai_keskus_2 from "../images/kai_keskus_2.jpg";
