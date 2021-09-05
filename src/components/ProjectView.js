@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import ReactDom from "react-dom"
+import ReactDom from "react-dom";
 import InfoContact from "./InfoContact";
 import axios from "axios";
 import kai_keskus_2 from "../images/kai_keskus_2.jpg";
@@ -45,15 +45,9 @@ export default function ProjectView({ open, style, close }) {
 
   console.log(posts);
 
-  // const descriptionsWidth = {
-  //   width: dimensions.width,
-  //   height: "100%",
-  // };
-
   const DESCRIPTIONS_CONTAINER = {
     fontStyle: "normal",
     fontWeight: "400",
-    // border: "5px solid red",
     width: dimensions.width,
     height: "100%",
   };
