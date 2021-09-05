@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useLayoutEffect } from "react";
 import { useParams } from "react-router-dom";
 import ReactDom from "react-dom";
 import InfoContact from "./InfoContact";
@@ -19,7 +19,7 @@ export default function ProjectView({ open, style, close }) {
   const targetRef = useRef();
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (targetRef.current) {
       setDimensions({
         width: targetRef.current.offsetWidth,
@@ -44,10 +44,6 @@ export default function ProjectView({ open, style, close }) {
   console.log(posts);
 
   const DESCRIPTIONS_CONTAINER = {
-    fontStyle: "normal",
-    fontWeight: "400",
-    height: "100%",
-
     width: dimensions.width,
   };
 
@@ -93,18 +89,14 @@ export default function ProjectView({ open, style, close }) {
           >
             <div className="main-landing-picture-container">
               <div
+                ref={targetRef}
                 onClick={(e) => {
                   // do not close projectview if anything inside modal content is clicked
                   e.stopPropagation();
                 }}
                 className="landing-picture-container"
               >
-                <img
-                  ref={targetRef}
-                  className="landing-picture"
-                  src={pilt}
-                  alt="Savant"
-                />
+                <img className="landing-picture" src={pilt} alt="Savant" />
               </div>
             </div>
           </motion.div>
@@ -120,6 +112,7 @@ export default function ProjectView({ open, style, close }) {
                 e.stopPropagation();
               }}
               style={DESCRIPTIONS_CONTAINER}
+              className="descriptions-container"
             >
               <div>
                 <div className="project-details">
@@ -187,7 +180,7 @@ export default function ProjectView({ open, style, close }) {
             transition={{ duration: 0.1 }}
           >
             <div className="main-landing-picture-container">
-              <div ref={targetRef} className="landing-picture-container">
+              <div className="landing-picture-container">
                 <img className="landing-picture" src={pilt} alt="trenn" />
               </div>
             </div>
@@ -196,10 +189,7 @@ export default function ProjectView({ open, style, close }) {
               className="main-description-container"
               style={PROJECT_VIEW_BACKGROUNDCOLOR}
             >
-              <div
-                className="descriptions-container"
-                style={DESCRIPTIONS_CONTAINER}
-              >
+              <div className="descriptions-container">
                 <div className="project-details">
                   <div className="project-client">
                     <div>Kai kunstikeskuse in-house disain</div>
