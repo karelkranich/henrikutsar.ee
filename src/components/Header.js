@@ -24,11 +24,11 @@ const Header = () => {
     <header className="header-container">
       <nav className="nav">
         <div className="list-items henri-kutsar-element">
-          <a href="/">HENRI KUTSAR</a>
+          <a href="/">HENRI KUTSARS</a>
         </div>
         <div className="list-items hide-nav-element">
           <div className="middle-nav-element">TRÜKI- JA DIGIDISAIN</div>
-        </div>
+        </div>  
         <div className="list-items info-contact-element">
           <div className="right-nav-element" onClick={() => setIsOpen(true)}>
             INFO & KONTAKT
