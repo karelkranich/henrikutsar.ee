@@ -7,7 +7,6 @@ import kai_keskus_2 from "../images/kai_keskus_2.jpg";
 import kai_keskus_3 from "../images/kai_keskus_3.jpg";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
-
 import { motion } from "framer-motion";
 
 export default function ProjectView({ open, style, close }) {
@@ -47,8 +46,9 @@ export default function ProjectView({ open, style, close }) {
   const DESCRIPTIONS_CONTAINER = {
     fontStyle: "normal",
     fontWeight: "400",
-    width: dimensions.width,
     height: "100%",
+
+    width: dimensions.width,
   };
 
   const LONGER_PARAGRAPH_DESCRIPTION = {
@@ -66,7 +66,6 @@ export default function ProjectView({ open, style, close }) {
 
   const PROJECT_VIEW_BACKGROUNDCOLOR = {
     backgroundColor: posts.projektivaate_taustavarv,
-    // width:""
   };
 
   // GO BACK TO PREVIOUS PAGE, CHANGE BODY OVERFLOW TO UNSET
@@ -94,14 +93,18 @@ export default function ProjectView({ open, style, close }) {
           >
             <div className="main-landing-picture-container">
               <div
-                ref={targetRef}
                 onClick={(e) => {
                   // do not close projectview if anything inside modal content is clicked
                   e.stopPropagation();
                 }}
                 className="landing-picture-container"
               >
-                <img className="landing-picture" src={pilt} alt="Savant" />
+                <img
+                  ref={targetRef}
+                  className="landing-picture"
+                  src={pilt}
+                  alt="Savant"
+                />
               </div>
             </div>
           </motion.div>
@@ -117,7 +120,6 @@ export default function ProjectView({ open, style, close }) {
                 e.stopPropagation();
               }}
               style={DESCRIPTIONS_CONTAINER}
-              className="descriptions-container"
             >
               <div>
                 <div className="project-details">
@@ -133,7 +135,6 @@ export default function ProjectView({ open, style, close }) {
                 </div>
               </div>
               {/* LONGER, DETAILED PARAGRAPH */}
-
               <div
                 className="longer-paragraph-description"
                 style={LONGER_PARAGRAPH_DESCRIPTION}
