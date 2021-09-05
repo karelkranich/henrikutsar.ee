@@ -5,7 +5,6 @@ import InfoContact from "./InfoContact";
 import axios from "axios";
 import kai_keskus_2 from "../images/kai_keskus_2.jpg";
 import kai_keskus_3 from "../images/kai_keskus_3.jpg";
-
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 
