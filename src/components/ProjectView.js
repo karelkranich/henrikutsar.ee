@@ -1,4 +1,4 @@
-import React, { useState, useRef, useLayoutEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ReactDom from "react-dom";
 import InfoContact from "./InfoContact";
@@ -18,13 +18,12 @@ export default function ProjectView({ open, style, close }) {
 
   // GET THE WIDTH OF IMAGE ORDER TO SET WIDTH OF DESCRIPTION CONTAINER
   const targetRef = useRef();
-  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+  const [dimensions, setDimensions] = useState({ width: 0 });
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (targetRef.current) {
       setDimensions({
         width: targetRef.current.offsetWidth,
-        height: targetRef.current.offsetHeight,
       });
     }
 
@@ -32,15 +31,11 @@ export default function ProjectView({ open, style, close }) {
       const results = await axios(
         `https://henrikutsar.ee/admin/wp-json/wp/v2/projektid/${id}`
       );
-
       setPosts(results.data.acf);
     };
 
     fetchData();
-  }, [id]);
-
-  const pilt =
-    "https://energyeducation.ca/wiki/images/b/bd/9103296900_0d383feabf_z.jpg";
+  }, [id, dimensions]);
 
   console.log(posts);
 
@@ -86,7 +81,7 @@ export default function ProjectView({ open, style, close }) {
             }}
             animate={{ transform: "translateY(0%)" }}
             exit={{ transform: "translateY(0%)" }}
-            transition={{ duration: 0.15 }}
+            transition={{ duration: 0.2 }}
           >
             <div className="main-landing-picture-container">
               <div
@@ -186,7 +181,7 @@ export default function ProjectView({ open, style, close }) {
           >
             <div className="main-landing-picture-container">
               <div className="landing-picture-container">
-                <img className="landing-picture" src={pilt} alt="trenn" />
+                <img className="landing-picture" src={posts.pilt} alt="trenn" />
               </div>
             </div>
             {/* FIRST PARAGRAPHS AFTER PROJECT PICTURE*/}
