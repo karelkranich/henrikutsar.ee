@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import ReactDom from "react-dom";
 import InfoContact from "./InfoContact";
 import axios from "axios";
+
 import kai_keskus_2 from "../images/kai_keskus_2.jpg";
 import kai_keskus_3 from "../images/kai_keskus_3.jpg";
 import { useHistory } from "react-router-dom";
@@ -85,7 +86,7 @@ export default function ProjectView({ open, style, close }) {
             }}
             animate={{ transform: "translateY(0%)" }}
             exit={{ transform: "translateY(0%)" }}
-            transition={{ duration: 0.1 }}
+            transition={{ duration: 0.15 }}
           >
             <div className="main-landing-picture-container">
               <div
@@ -96,7 +97,11 @@ export default function ProjectView({ open, style, close }) {
                 }}
                 className="landing-picture-container"
               >
-                <img className="landing-picture" src={pilt} alt="Savant" />
+                <img
+                  className="landing-picture"
+                  src={posts.pilt}
+                  alt="Savant"
+                />
               </div>
             </div>
           </motion.div>

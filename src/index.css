@@ -401,10 +401,11 @@
   }
 
   .grid-item {
-    width: auto;
+    /* width: auto; */
     height: 100%;
     cursor: pointer;
     position: relative;
+    
   }
 
   /* HOVER */

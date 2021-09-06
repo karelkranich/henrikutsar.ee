@@ -31,7 +31,11 @@ export default function Projects() {
       <div className="grid-container">
         {posts &&
           posts.map((post) => (
-            <div key={post.id} className="grid-item">
+            <div
+              // style={{ width: `${post.acf.laius}` + "%" }}
+              key={post.id}
+              className="grid-item"
+            >
               <Link onClick={onLinkClick} to={`/projektid/${post.id}`}>
                 <Hover>{post.title.rendered}</Hover>
                 <img src={teine} alt="Savant" />
@@ -45,6 +49,7 @@ export default function Projects() {
           <img src={kolmas} alt="Savant" />
           <div className="project-title project-title-3">Ida ots(as)?</div>
         </div>
+
         {/* <div className="grid-item grid-item-4"> */}
         {/* <div className="justify-image-frame"> */}
         {/* <img src={neljas} alt="Savant" /> */}
