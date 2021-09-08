@@ -99,7 +99,8 @@ export default function ProjectView({ open, style, close }) {
   };
 
   const PROJECT_VIEW_BACKGROUNDCOLOR = {
-    backgroundColor: posts.projektivaate_taustavarv,
+    // backgroundColor: posts.projektivaate_taustavarv,
+    backgroundColor: "rgba(253, 241, 244)",
   };
 
   // GO BACK TO PREVIOUS PAGE, CHANGE BODY OVERFLOW TO UNSET
@@ -226,7 +227,10 @@ export default function ProjectView({ open, style, close }) {
             exit={{ transform: "translateY(0%)" }}
             transition={{ duration: 0.1 }}
           >
-            <div className="main-landing-picture-container">
+            <div
+              style={PROJECT_VIEW_BACKGROUNDCOLOR}
+              className="main-landing-picture-container"
+            >
               <div className="landing-picture-container">
                 <img className="landing-picture" src={teine} alt="trenn" />
               </div>

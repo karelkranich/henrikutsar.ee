@@ -1546,7 +1546,6 @@
   .overlay-styles {
     position: absolute;
     max-width: 100%;
-    background-color: rgba(253, 241, 244);
     z-index: 1000;
   }
   /* PROJECT-VIEW NAVBAR */
