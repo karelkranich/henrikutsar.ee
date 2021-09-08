@@ -2,12 +2,10 @@ import React, { useState, useRef, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ReactDom from "react-dom";
 import teine from "../images/teine.jpg";
-import Header from "./Header";
-import InfoContact from "./InfoContact";
+
 import axios from "axios";
 
 import { useHistory } from "react-router-dom";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 export default function ProjectView({ open, style, close }) {
@@ -15,7 +13,6 @@ export default function ProjectView({ open, style, close }) {
   const [posts, setPosts] = useState("");
   // Set different sizes of the REST API images
   const [originalSize, setOriginalSize] = useState("");
-  const [imageSize, setImageSize] = useState("");
 
   const { id } = useParams();
 
@@ -66,7 +63,6 @@ export default function ProjectView({ open, style, close }) {
 
       setPosts(results.data.acf);
       setOriginalSize(results.data.acf.pildid);
-      setImageSize(results);
     };
 
     fetchData();
@@ -94,10 +90,6 @@ export default function ProjectView({ open, style, close }) {
 
   const PROJECT_VIEW_BACKGROUNDCOLOR = {
     backgroundColor: posts.projektivaate_taustavarv,
-  };
-
-  const headerstyle = {
-    border: "5px solid red",
   };
 
   // GO BACK TO PREVIOUS PAGE, CHANGE BODY OVERFLOW TO UNSET
