@@ -71,7 +71,7 @@ export default function ProjectView({ open, style, close }) {
   const DESCRIPTIONS_CONTAINER = {
     width: dimensions.height * 1.5,
   };
-  // console.log(posts);
+  console.log(posts);
   // console.log(originalSize);
   // console.log(imageSize);
 
@@ -125,7 +125,7 @@ export default function ProjectView({ open, style, close }) {
                 }}
                 className="landing-picture-container"
               >
-                <img className="landing-picture" src={teine} alt="Savant" />
+                <img className="landing-picture" src={posts.pilt} alt="Savant" />
               </div>
             </div>
           </motion.div>
@@ -243,7 +243,6 @@ export default function ProjectView({ open, style, close }) {
                   {originalSize &&
                     originalSize.map((pilt) => (
                       <div key={pilt.id} className="project-picture-size">
-                        {console.log(pilt.sizes)}
                         <img src={pilt.sizes.medium_large} alt="kai_keskus_2" />
                       </div>
                     ))}
