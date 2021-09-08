@@ -28,7 +28,7 @@ const Header = () => {
         </div>
         <div className="list-items hide-nav-element">
           <div className="middle-nav-element">TRÜKI- JA DIGIDISAIN</div>
-        </div>  
+        </div>
         <div className="list-items info-contact-element">
           <div className="right-nav-element" onClick={() => setIsOpen(true)}>
             INFO & KONTAKT
