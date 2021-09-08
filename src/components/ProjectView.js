@@ -13,6 +13,7 @@ export default function ProjectView({ open, style, close }) {
   const [posts, setPosts] = useState("");
   // Set different sizes of the REST API images
   const [originalSize, setOriginalSize] = useState("");
+  const [imageSize, setImageSize] = useState("");
 
   const { id } = useParams();
 
@@ -69,6 +70,7 @@ export default function ProjectView({ open, style, close }) {
 
       setPosts(results.data.acf);
       setOriginalSize(results.data.acf.pildid);
+      setImageSize(results.data.acf);
     };
 
     hashHandler();
@@ -81,9 +83,9 @@ export default function ProjectView({ open, style, close }) {
 
   // console.log("hi");
 
-  console.log(posts);
+  // console.log(posts);
   // console.log(originalSize);
-  // console.log(imageSize);
+  console.log(imageSize);
 
   const LONGER_PARAGRAPH_DESCRIPTION = {
     paddingTop: "3.4%",
@@ -232,7 +234,7 @@ export default function ProjectView({ open, style, close }) {
               className="main-landing-picture-container"
             >
               <div className="landing-picture-container">
-                <img className="landing-picture" src={teine} alt="trenn" />
+                <img className="landing-picture" src={posts.pilt} alt="trenn" />
               </div>
             </div>
             {/* FIRST PARAGRAPHS AFTER PROJECT PICTURE*/}
