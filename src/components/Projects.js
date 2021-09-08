@@ -12,19 +12,21 @@ export default function Projects() {
   // GET THE WIDTH OF IMAGE ORDER TO SET WIDTH OF DESCRIPTION CONTAINER
 
   useEffect(() => {
+    // TO MAKE SURE THE HOMEPAGE OVERFLOW IS NEVER HIDDEN
+    function hashHandler() {
+      document.querySelector("body").style.overflow = "unset";
+    }
+    window.addEventListener("hashchange", hashHandler, false);
+
     const fetchData = async () => {
       const results = await axios(
         "https://henrikutsar.ee/admin/wp-json/wp/v2/projektid"
       );
       setPosts(results.data);
     };
-
+    hashHandler();
     fetchData();
   }, []);
-
-  const onLinkClick = () => {
-    document.querySelector("body").style.overflow = "hidden";
-  };
 
   return (
     <section className="image-section">
@@ -36,7 +38,7 @@ export default function Projects() {
               key={post.id}
               className="grid-item"
             >
-              <Link onClick={onLinkClick} to={`/projektid/${post.id}`}>
+              <Link to={`/projektid/${post.id}`}>
                 <Hover>{post.title.rendered}</Hover>
                 <img src={teine} alt="Savant" />
               </Link>

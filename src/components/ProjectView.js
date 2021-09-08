@@ -8,7 +8,10 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { motion } from "framer-motion";
 
+import { useLocation, useRouteMatch } from "react-router-dom";
+
 export default function ProjectView({ open, style, close }) {
+  const [isOpen, setIsOpen] = useState(false);
   // FETCH DATA FROM WORDPRESS REST API
   const [posts, setPosts] = useState("");
   // Set different sizes of the REST API images
@@ -49,6 +52,12 @@ export default function ProjectView({ open, style, close }) {
   // });
 
   useEffect(() => {
+    // TO MAKE SURE THE BODY OVERFLOW IS NEVER UNSET
+    function hashHandler() {
+      document.querySelector("body").style.overflow = "hidden";
+    }
+    window.addEventListener("hashchange", hashHandler, false);
+
     if (targetRef.current) {
       setDimensions({
         width: targetRef.current.offsetWidth,
@@ -65,12 +74,16 @@ export default function ProjectView({ open, style, close }) {
       setOriginalSize(results.data.acf.pildid);
     };
 
+    hashHandler();
     fetchData();
   }, [id]);
 
   const DESCRIPTIONS_CONTAINER = {
     width: dimensions.height * 1.5,
   };
+
+  // console.log("hi");
+
   console.log(posts);
   // console.log(originalSize);
   // console.log(imageSize);
@@ -97,8 +110,15 @@ export default function ProjectView({ open, style, close }) {
   const routeChange = () => {
     history.push("/");
 
-    document.querySelector("body").style.overflow = "unset";
+    // document.querySelector("body").style.overflow = "unset";
   };
+
+  // if (isOpen) {
+  //   document.querySelector("body").style.overflow = "hidden";
+  // }
+  // if (!isOpen) {
+  //   document.querySelector("body").style.overflow = "unset";
+  // }
 
   return ReactDom.createPortal(
     <div>
@@ -125,7 +145,11 @@ export default function ProjectView({ open, style, close }) {
                 }}
                 className="landing-picture-container"
               >
-                <img className="landing-picture" src={posts.pilt} alt="Savant" />
+                <img
+                  className="landing-picture"
+                  src={posts.pilt}
+                  alt="Savant"
+                />
               </div>
             </div>
           </motion.div>
