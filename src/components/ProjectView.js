@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ReactDom from "react-dom";
+import teine from "../images/teine.jpg";
+import Header from "./Header";
 import InfoContact from "./InfoContact";
 import axios from "axios";
 
-import kai_keskus_2 from "../images/kai_keskus_2.jpg";
-import kai_keskus_3 from "../images/kai_keskus_3.jpg";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -13,17 +13,49 @@ import { motion } from "framer-motion";
 export default function ProjectView({ open, style, close }) {
   // FETCH DATA FROM WORDPRESS REST API
   const [posts, setPosts] = useState("");
+  // Set different sizes of the REST API images
+  const [originalSize, setOriginalSize] = useState("");
+  const [imageSize, setImageSize] = useState("");
 
   const { id } = useParams();
 
   // GET THE WIDTH OF IMAGE ORDER TO SET WIDTH OF DESCRIPTION CONTAINER
   const targetRef = useRef();
-  const [dimensions, setDimensions] = useState({ width: 0 });
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+
+  // holds the timer for setTimeout and clearInterval
+  // let movement_timer = null;
+
+  // // the number of ms the window size must stay the same size before the
+  // // dimension state variable is reset
+  // const RESET_TIMEOUT = 100;
+
+  // const test_dimensions = () => {
+  //   // For some reason targetRef.current.getBoundingClientRect was not available
+  //   // I found this worked for me, but unfortunately I can't find the
+  //   // documentation to explain this experience
+  //   if (targetRef.current) {
+  //     setDimensions({
+  //       width: targetRef.current.offsetWidth,
+  //       height: targetRef.current.offsetHeight,
+  //     });
+  //   }
+  // };
+
+  // useLayoutEffect(() => {
+  //   test_dimensions();
+  // }, []);
+
+  // window.addEventListener("resize", () => {
+  //   clearInterval(movement_timer);
+  //   movement_timer = setTimeout(test_dimensions, RESET_TIMEOUT);
+  // });
 
   useEffect(() => {
     if (targetRef.current) {
       setDimensions({
         width: targetRef.current.offsetWidth,
+        height: targetRef.current.offsetHeight,
       });
     }
 
@@ -31,17 +63,21 @@ export default function ProjectView({ open, style, close }) {
       const results = await axios(
         `https://henrikutsar.ee/admin/wp-json/wp/v2/projektid/${id}`
       );
+
       setPosts(results.data.acf);
+      setOriginalSize(results.data.acf.pildid);
+      setImageSize(results);
     };
 
     fetchData();
-  }, [id, dimensions]);
-
-  console.log(posts);
+  }, [id]);
 
   const DESCRIPTIONS_CONTAINER = {
-    width: dimensions.width,
+    width: dimensions.height * 1.5,
   };
+  // console.log(posts);
+  // console.log(originalSize);
+  // console.log(imageSize);
 
   const LONGER_PARAGRAPH_DESCRIPTION = {
     paddingTop: "3.4%",
@@ -51,7 +87,7 @@ export default function ProjectView({ open, style, close }) {
   const OVERYLAY_STYLES = {
     position: "fixed",
     height: "100%",
-    backdropFilter: "blur(8px)",
+    // backdropFilter: "blur(8px)",
     width: "100vw",
     overflow: "scroll",
   };
@@ -60,10 +96,15 @@ export default function ProjectView({ open, style, close }) {
     backgroundColor: posts.projektivaate_taustavarv,
   };
 
+  const headerstyle = {
+    border: "5px solid red",
+  };
+
   // GO BACK TO PREVIOUS PAGE, CHANGE BODY OVERFLOW TO UNSET
   let history = useHistory();
   const routeChange = () => {
     history.push("/");
+
     document.querySelector("body").style.overflow = "unset";
   };
 
@@ -92,11 +133,7 @@ export default function ProjectView({ open, style, close }) {
                 }}
                 className="landing-picture-container"
               >
-                <img
-                  className="landing-picture"
-                  src={posts.pilt}
-                  alt="Savant"
-                />
+                <img className="landing-picture" src={teine} alt="Savant" />
               </div>
             </div>
           </motion.div>
@@ -136,20 +173,12 @@ export default function ProjectView({ open, style, close }) {
               </div>
               {/* PROJECT PICTURES*/}
               <div className="project-view-pictures">
-                <div className="project-picture-size picture-1">
-                  <img
-                    className="first-project-picture"
-                    src={kai_keskus_2}
-                    alt="kai_keskus_2"
-                  />
-                </div>
-                <div className="project-picture-size project-picture-2">
-                  <img
-                    className="second-project-picture"
-                    src={kai_keskus_3}
-                    alt="kai_keskus_3"
-                  />
-                </div>
+                {originalSize &&
+                  originalSize.map((pilt) => (
+                    <div key={pilt.id} className="project-picture-size">
+                      <img src={pilt.url} alt="kai_keskus_2" />
+                    </div>
+                  ))}
               </div>
             </div>
           </div>
@@ -162,14 +191,19 @@ export default function ProjectView({ open, style, close }) {
             e.stopPropagation();
           }}
         >
-          <nav className="project-nav">
-            <div className="project-list-items project-henri-kutsar-element">
-              <Link onClick={routeChange} to={"/"}>
-                HENRI KUTSAR
-              </Link>
-            </div>
-            <InfoContact />
-          </nav>
+          {/* <nav className="project-nav"> */}
+          {/* <div className="project-list-items project-henri-kutsar-element"> */}
+          {/* <div>HENRI KUTSAR</div> */}
+          {/* <Link onClick={routeChange} to={"/"}> */}
+          {/* HENRI KUTSAR */}
+          {/* </Link> */}
+          {/* </div> */}
+          {/* <InfoContact /> */}
+          {/* </nav> */}
+
+          {/* <Header 
+          classname="headerz"
+          style={headerstyle} /> */}
 
           <motion.div
             initial={{
@@ -181,7 +215,7 @@ export default function ProjectView({ open, style, close }) {
           >
             <div className="main-landing-picture-container">
               <div className="landing-picture-container">
-                <img className="landing-picture" src={posts.pilt} alt="trenn" />
+                <img className="landing-picture" src={teine} alt="trenn" />
               </div>
             </div>
             {/* FIRST PARAGRAPHS AFTER PROJECT PICTURE*/}
@@ -214,20 +248,13 @@ export default function ProjectView({ open, style, close }) {
                 </div>
                 {/* PROJECT PICTURES*/}
                 <div className="project-view-pictures">
-                  <div className="project-picture-size picture-1">
-                    <img
-                      className="first-project-picture"
-                      src={kai_keskus_2}
-                      alt="kai_keskus_2"
-                    />
-                  </div>
-                  <div className="project-picture-size project-picture-2">
-                    <img
-                      className="second-project-picture"
-                      src={kai_keskus_3}
-                      alt="kai_keskus_3"
-                    />
-                  </div>
+                  {originalSize &&
+                    originalSize.map((pilt) => (
+                      <div key={pilt.id} className="project-picture-size">
+                        {console.log(pilt.sizes)}
+                        <img src={pilt.sizes.medium_large} alt="kai_keskus_2" />
+                      </div>
+                    ))}
                 </div>
               </div>
             </div>
