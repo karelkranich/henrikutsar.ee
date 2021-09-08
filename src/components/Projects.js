@@ -4,7 +4,7 @@ import kolmas from "../images/kolmas.jpg";
 import Hover from "./Hover";
 import { Link } from "react-router-dom";
 import axios from "axios";
-
+import neljas from "../images/neljas.jpg";
 export default function Projects() {
   // FETCH DATAFROM WORDPRESS REST API
   const [posts, setPosts] = useState("");
@@ -36,7 +36,7 @@ export default function Projects() {
             <div
               // style={{ width: `${post.acf.laius}` + "%" }}
               key={post.id}
-              className="grid-item"
+              className="grid-item "
             >
               <Link to={`/projektid/${post.id}`}>
                 <Hover>{post.title.rendered}</Hover>
@@ -53,10 +53,11 @@ export default function Projects() {
         </div>
 
         {/* <div className="grid-item grid-item-4"> */}
-        {/* <div className="justify-image-frame"> */}
-        {/* <img src={neljas} alt="Savant" /> */}
-        {/* </div> */}
-        {/* <div className="project-title project-title-4">Elusäde</div> */}
+        <div className="grid-item grid-item-4 optional-size">
+          <img src={neljas} alt="Savant" />
+          <div className="project-title project-title-4">Elusäde</div>
+        </div>
+
         {/* </div> */}
         <div className="grid-item grid-item-5">
           <img src={kolmas} alt="Savant" />

@@ -71,11 +71,6 @@
     width: 100%;
   }
 
-  .grid-justify-center {
-    display: flex;
-    justify-content: center;
-  }
-
   .justify-image-frame {
     width: 50%;
   }
@@ -312,7 +307,6 @@
   body {
     margin: 0;
     padding: 0;
- 
   }
 
   .switch-wrapper {
@@ -385,25 +379,24 @@
     height: 100%;
   }
 
-  .grid-justify-center {
-    display: flex;
-    justify-content: center;
+  .grid-item {
+    height: 100%;
+    width: auto;
+    cursor: pointer;
+    position: relative;
+    max-height: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    /* border:1px solid red; */
   }
 
-  .justify-image-frame {
-    width: 50%;
+  .optional-size {
+    max-width: 46.7%;
   }
 
   .grid-item img {
-    height: 100%;
-    width: 100%;
-  }
-
-  .grid-item {
-    /* width: auto; */
-    height: 100%;
-    cursor: pointer;
-    position: relative;
+    max-width: 100%;
+    /* border: 2px solid red; */
   }
 
   /* HOVER */
@@ -648,7 +641,6 @@
     left: 2.45%;
     right: 2.45%;
   }
-  /* end */
 
   .middle-nav-element {
     cursor: default;
@@ -683,26 +675,30 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .grid-justify-center {
-    display: grid;
-    justify-items: center;
-  }
-
-  .grid-container img {
-    height: 100%;
-    width: 100%;
-  }
   .grid-item {
     height: 100%;
     width: auto;
     cursor: pointer;
     position: relative;
+    max-height: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    /* border: 1px solid red; */
+  }
+
+  .optional-size {
+    max-width: 47.7%;
+  }
+
+  .grid-item img {
+    max-width: 100%;
   }
 
   .justify-image-frame {
     max-width: 50%;
     margin-right: auto;
     margin-left: auto;
+    /* border:5px solid red; */
   }
 
   /* HOVER */
@@ -1018,7 +1014,6 @@
     right: 15px;
     z-index: 4;
     list-style-type: none;
-    /* border:5px solid red; */
   }
 
   .henri-kutsar-element {
@@ -1071,26 +1066,30 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .grid-container img {
-    height: 100%;
-    width: 100%;
-  }
-
   .grid-item {
     height: 100%;
-    width: 100%;
-    line-height: 0%;
+    width: auto;
+    cursor: pointer;
+    position: relative;
+    max-height: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    /* border: 1px solid red; */
   }
 
-  .justify-image-frame {
-    max-width: 100%;
-    max-height: 100%;
-    margin-right: 20%;
-    margin-left: 20%;
+  .optional-size {
+    max-width: 46.7%;
   }
 
   .grid-item img {
-    cursor: pointer;
+    max-width: 100%;
+  }
+
+  .justify-image-frame {
+    max-width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    /* border:5px solid red; */
   }
 
   /* FOOTER CSS */
@@ -1424,26 +1423,30 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .grid-container img {
-    height: 100%;
-    width: 100%;
-  }
-
   .grid-item {
     height: 100%;
     width: auto;
-    line-height: 0%;
+    cursor: pointer;
+    position: relative;
+    max-height: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    /* border: 1px solid red; */
   }
 
-  .justify-image-frame {
-    max-width: 100%;
-    max-height: 100%;
-    margin-right: 20%;
-    margin-left: 20%;
+  .optional-size {
+    max-width: 47.7%;
   }
 
   .grid-item img {
-    cursor: pointer;
+    max-width: 100%;
+  }
+
+  .justify-image-frame {
+    max-width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    /* border:5px solid red; */
   }
 
   .main-footer-container {
