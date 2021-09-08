@@ -8,10 +8,7 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { motion } from "framer-motion";
 
-import { useLocation, useRouteMatch } from "react-router-dom";
-
 export default function ProjectView({ open, style, close }) {
-  const [isOpen, setIsOpen] = useState(false);
   // FETCH DATA FROM WORDPRESS REST API
   const [posts, setPosts] = useState("");
   // Set different sizes of the REST API images
