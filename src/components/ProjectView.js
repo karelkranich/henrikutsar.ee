@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ReactDom from "react-dom";
-import teine from "../images/teine.jpg";
 
 import axios from "axios";
 
