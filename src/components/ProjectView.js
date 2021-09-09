@@ -18,7 +18,10 @@ export default function ProjectView({ open, style, close }) {
 
   // GET THE WIDTH OF IMAGE ORDER TO SET WIDTH OF DESCRIPTION CONTAINER
   const targetRef = useRef();
-  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+  const [dimensions, setDimensions] = useState({
+    height: window.innerHeight,
+    width: window.innerWidth,
+  });
 
   // holds the timer for setTimeout and clearInterval
   // let movement_timer = null;
@@ -55,12 +58,16 @@ export default function ProjectView({ open, style, close }) {
     }
     window.addEventListener("hashchange", hashHandler, false);
 
-    if (targetRef.current) {
-      setDimensions({
-        width: targetRef.current.offsetWidth,
-        height: targetRef.current.offsetHeight,
-      });
+    function handleResize() {
+      if (targetRef.current) {
+        setDimensions({
+          width: targetRef.current.offsetWidth,
+          height: targetRef.current.offsetHeight,
+        });
+      }
     }
+
+    window.addEventListener("resize", handleResize);
 
     const fetchData = async () => {
       const results = await axios(
@@ -72,6 +79,7 @@ export default function ProjectView({ open, style, close }) {
       setImageSize(results.data.acf);
     };
 
+    handleResize();
     hashHandler();
     fetchData();
   }, [id]);
