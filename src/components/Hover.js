@@ -3,10 +3,10 @@ import { animated } from "react-spring";
 
 function Hover({ children }) {
   const HOVER_TEXT_STYLE = {
-    backgroundColor: "rgba(0, 0, 0, 0.25)",
     width: "100%",
     padding: "8px",
     color: "white",
+    backgroundColor: "#333333",
   };
 
   return (

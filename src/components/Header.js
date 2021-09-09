@@ -8,20 +8,23 @@ const Header = () => {
   const transitions = useTransition(isOpen, null, {
     from: {
       transform: "translateY(-100%)",
-      transition: " 100",
+
       transitionTimingFunction: "linear",
     },
-    enter: { transform: "translateY(0px)" },
-    leave: {
+    enter: {
       transform: "translateY(0px)",
-      transition: " 100",
+    },
+
+    leave: {
+      transform: "translateX(-100%)",
       transitionTimingFunction: "linear",
     },
-    config: { duration: 120 },
+
+    config: { duration: 100 },
   });
 
   return (
-    <header className="header-container">
+    <header className="header-container ">
       <nav className="nav">
         <div className="list-items henri-kutsar-element">
           <a href="/">HENRI KUTSAR</a>

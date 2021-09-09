@@ -105,7 +105,7 @@
     overflow: hidden;
     color: white;
     font-size: 22px;
-    background-color: black;
+    background-color: #333333;
   }
   .grid-item:hover .hover-animation {
     position: absolute;
@@ -114,7 +114,7 @@
     max-height: 100%;
     width: 100%;
     transition: max-height 0.8s;
-    background-color: black;
+    background-color: #333333;
   }
 
   /* FOOTER CSS */
@@ -165,7 +165,7 @@
     font-weight: 400;
     font-family: Helvetica;
     color: white;
-    background-color: black;
+    background-color: #333333;
   }
 
   .main-info-grid-container {
@@ -414,7 +414,7 @@
     overflow: hidden;
     color: white;
     width: 100%;
-    background-color: black;
+    background-color: #333333;
   }
   .grid-item:hover .hover-animation {
     position: absolute;
@@ -423,7 +423,7 @@
     max-height: 100%;
     width: 100%;
     transition: max-height 0.8s;
-    background-color: black;
+    background-color: #333333;
   }
 
   /* FOOTER CSS */
@@ -465,9 +465,11 @@
     right: 0;
     bottom: 0;
     height: 100%;
-    backdrop-filter: blur(8px);
+    /* backdrop-filter: blur(8px); */
     z-index: 232323233232;
     cursor: pointer;
+    /* backdrop-filter: rgba(0, 0, 0, 0); */
+    backdrop-filter: brightness(75%);
   }
 
   .info-content-styles {
@@ -476,7 +478,7 @@
     font-weight: 400;
     font-family: Helvetica;
     color: white;
-    background-color: black;
+    background-color: #333333;
   }
 
   .main-info-grid-container {
@@ -715,7 +717,7 @@
     overflow: hidden;
     color: white;
     width: 100%;
-    background-color: black;
+    background-color: #333333;
   }
   .grid-item:hover .hover-animation {
     position: absolute;
@@ -724,7 +726,7 @@
     max-height: 100%;
     width: 100%;
     transition: max-height 0.8s;
-    background-color: black;
+    background-color: #333333;
   }
 
   /* FOOTER CSS */
@@ -773,10 +775,10 @@
   .info-content-styles {
     width: 100vw;
     height: 100%;
-    font-weight: 400;
+    font-weight: 300;
     font-family: Helvetica;
     color: white;
-    background-color: black;
+    background-color: #333333;
   }
 
   .main-info-grid-container {
@@ -931,10 +933,10 @@
   .info-content-styles {
     width: 100vw;
     height: 100%;
-    font-weight: 400;
+    font-weight: 300;
     font-family: Helvetica;
     color: white;
-    background-color: black;
+    background-color: #333333;
   }
 
   .main-info-grid-container {
@@ -1138,10 +1140,10 @@
   .info-content-styles {
     width: 100vw;
     height: 100%;
-    font-weight: 400;
+    font-weight: 300;
     font-family: Helvetica;
     color: white;
-    background-color: black;
+    background-color: #333333;
     padding: 15px;
     cursor: default;
   }
@@ -1497,7 +1499,7 @@
     font-weight: 400;
     font-family: Helvetica;
     color: white;
-    background-color: black;
+    background-color: #333333;
   }
 
   .main-info-grid-container {

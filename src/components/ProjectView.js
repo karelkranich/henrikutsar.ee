@@ -6,7 +6,7 @@ import axios from "axios";
 
 import { useHistory } from "react-router-dom";
 import { motion } from "framer-motion";
-
+import Header from "./Header";
 export default function ProjectView({ open, style, close }) {
   // FETCH DATA FROM WORDPRESS REST API
   const [posts, setPosts] = useState("");
@@ -224,9 +224,7 @@ export default function ProjectView({ open, style, close }) {
           {/* <InfoContact /> */}
           {/* </nav> */}
 
-          {/* <Header 
-          classname="headerz"
-          style={headerstyle} /> */}
+          <Header />
 
           <motion.div
             initial={{
