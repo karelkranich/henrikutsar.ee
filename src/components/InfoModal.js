@@ -1,6 +1,5 @@
 import React from "react";
 import { animated } from "react-spring";
-// import { motion } from "framer-motion";
 
 function infoModal({ open, style, close }) {
   const BACKGROUND_BLUR = {
@@ -10,7 +9,7 @@ function infoModal({ open, style, close }) {
     document.querySelector("body").style.overflow = "unset";
 
     return null;
-  } else if (open) {  
+  } else if (open) {
     document.querySelector("body").style.overflow = "hidden";
 
     return (
