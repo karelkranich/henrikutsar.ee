@@ -3,32 +3,28 @@ import { animated } from "react-spring";
 // import { motion } from "framer-motion";
 
 function infoModal({ open, style, close }) {
+  const BACKGROUND_BLUR = {
+    backgroundColor: " rgba(0, 0, 0, 0.25)",
+  };
   if (!open) {
     document.querySelector("body").style.overflow = "unset";
 
     return null;
-  } else if (open) {
+  } else if (open) {  
     document.querySelector("body").style.overflow = "hidden";
 
     return (
       <>
         <div className="info-grid-parent">
           <div
+            style={BACKGROUND_BLUR}
             className="info-overlay-styles"
             onClick={() => {
               // close modal when outside of modal is clicked
               close();
             }}
           >
-            <animated.div
-              style={style}
-              // initial={{
-              //   transform: "translateY(-100%)",
-              // }}
-              // animate={{ transform: "translateY(0%)" }}
-              // exit={{ transform: "translateY(-100%)" }}
-              // transition={{ duration: 0.15 }}
-            >
+            <animated.div style={style}>
               <div
                 className="info-content-styles"
                 // style={CONTENT_STYLES}
