@@ -5,7 +5,7 @@ import axios from "axios";
 export default function Projects() {
   // FETCH DATAFROM WORDPRESS REST API
   const [posts, setPosts] = useState("");
-  const [postss, setPostss] = useState("");
+
   // GET THE WIDTH OF IMAGE ORDER TO SET WIDTH OF DESCRIPTION CONTAINER
 
   useEffect(() => {
@@ -20,13 +20,12 @@ export default function Projects() {
         "https://henrikutsar.ee/admin/wp-json/acf/v3/projektid/"
       );
       setPosts(results.data);
-      setPostss(results);
     };
     hashHandler();
     fetchData();
   }, []);
 
-  // console.log(posts);
+
 
   return (
     <section className="image-section">
@@ -41,10 +40,10 @@ export default function Projects() {
               <Link to={`/${post.acf.slug}`}>
                 <Hover>{post.acf.projekti_pealkiri}</Hover>
                 {/* {posts.acf.thumbnaili_foto && */}
-                  {/* posts.map((post) => ( */}
-                    <img src={post.acf.thumbnaili_foto.url} alt="Savant" />
-                  {/* ))} */}
-                  {console.log(post.acf.thumbnaili_foto.sizes.large)}
+                {/* posts.map((post) => ( */}
+                <img src={post.acf.thumbnaili_foto.url} alt="Savant" />
+                {/* ))} */}
+                {console.log(post.acf.thumbnaili_foto.sizes.large)}
               </Link>
               <div className="project-title project-title-2">
                 {/* {post.title.rendered} */}
