@@ -6,7 +6,7 @@ import buffer from "../images/buffer.gif";
 import { useHistory } from "react-router-dom";
 import { motion } from "framer-motion";
 
-export default function ProjectView({ open, style, close }) {
+export default function ProjectView( ) {
   // FETCH DATA FROM WORDPRESS REST API
   const [posts, setPosts] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
