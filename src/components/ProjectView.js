@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ReactDom from "react-dom";
 import axios from "axios";
-import buffer from "../images/buffer.gif";
+
 import { useHistory } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -51,7 +51,7 @@ export default function ProjectView() {
   }, [slug]);
 
   const DESCRIPTIONS_CONTAINER = {
-    width: dimensions.height * 1.426,
+    width: dimensions.width,
     // border: "1px solid red",
   };
 
@@ -94,7 +94,7 @@ export default function ProjectView() {
                   }}
                   animate={{ transform: "translateY(0%)" }}
                   exit={{ transform: "translateY(0%)" }}
-                  transition={{ duration: 0.1 }}
+                  transition={({ duration: 0.2 }, { ease: "easeInOut" })}
                 >
                   <div className="main-landing-picture-container">
                     <div
@@ -178,26 +178,21 @@ export default function ProjectView() {
                   }}
                   animate={{ transform: "translateY(0%)" }}
                   exit={{ transform: "translateY(0%)" }}
-                  transition={{ duration: 0.1 }}
+                  transition={{ duration: 0.2 }}
                 >
                   <div
                     style={PROJECT_VIEW_BACKGROUNDCOLOR}
                     className="main-landing-picture-container"
                   >
-                    {pilt.acf.vaikse_ekraani_pilt &&
-                      pilt.acf.vaikse_ekraani_pilt.map((pildid) => (
-                        <div
-                          key={pildid.id}
-                          className="landing-picture-container"
-                        >
-                          <img
-                            className="landing-picture"
-                            src={pildid.sizes.medium_large}
-                            alt="trenn"
-                          />
-                        </div>
-                      ))}
+                    <div className="landing-picture-container">
+                      <img
+                        className="landing-picture"
+                        src={pilt.acf.thumbnaili_foto.sizes.medium_large}
+                        alt="trenn"
+                      />
+                    </div>
                   </div>
+                  {/* {console.log(pilt.acf.thumbnaili_foto.sizes.medium_large)} */}
                   {/* FIRST PARAGRAPHS AFTER PROJECT PICTURE*/}
                   <div
                     className="main-description-container"
@@ -251,7 +246,7 @@ export default function ProjectView() {
     return (
       <div className="main-buffer-container">
         <div className="buffer-container">
-          <img className="buffer-image" src={buffer} alt="" />
+          {/* <img className="buffer-image" src={buffer} alt="" /> */}
         </div>
       </div>
     );

@@ -9,18 +9,17 @@ const Header = () => {
     from: {
       transform: "translateY(-100%)",
 
-      transitionTimingFunction: "linear",
+      transitionTimingFunction: "ease-in-out",
     },
     enter: {
       transform: "translateY(0px)",
     },
 
     leave: {
-      transform: "translateX(-100%)",
-      transitionTimingFunction: "linear",
+      transform: "translateX(0px)",
     },
 
-    config: { duration: 100 },
+    config: { duration: 125 },
   });
 
   return (
@@ -50,7 +49,6 @@ const Header = () => {
         </div>
       </nav>
     </header>
-    // smaller
   );
 };
 export default Header;
