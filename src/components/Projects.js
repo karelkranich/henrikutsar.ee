@@ -25,8 +25,6 @@ export default function Projects() {
     fetchData();
   }, []);
 
-
-
   return (
     <section className="image-section">
       <div className="grid-container">
@@ -43,7 +41,6 @@ export default function Projects() {
                 {/* posts.map((post) => ( */}
                 <img src={post.acf.thumbnaili_foto.url} alt="Savant" />
                 {/* ))} */}
-                {console.log(post.acf.thumbnaili_foto.sizes.large)}
               </Link>
               <div className="project-title project-title-2">
                 {/* {post.title.rendered} */}

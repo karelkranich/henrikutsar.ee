@@ -6,7 +6,7 @@ import buffer from "../images/buffer.gif";
 import { useHistory } from "react-router-dom";
 import { motion } from "framer-motion";
 
-export default function ProjectView( ) {
+export default function ProjectView() {
   // FETCH DATA FROM WORDPRESS REST API
   const [posts, setPosts] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
@@ -25,13 +25,13 @@ export default function ProjectView( ) {
     function hashHandler() {
       document.querySelector("body").style.overflow = "hidden";
     }
-    window.addEventListener("hashchange", hashHandler, false);
+    window.addEventListener("hashchange", hashHandler, true);
 
     function handleResize() {
       if (targetRef.current) {
         setDimensions({
-          width: targetRef.current.offsetWidth,
-          height: targetRef.current.offsetHeight,
+          width: targetRef.current.clientWidth,
+          height: targetRef.current.clientHeight,
         });
       }
     }
@@ -45,13 +45,13 @@ export default function ProjectView( ) {
       setPosts(results.data);
       setIsOpen(true);
     };
+    fetchData();
     handleResize();
     hashHandler();
-    fetchData();
   }, [slug]);
 
   const DESCRIPTIONS_CONTAINER = {
-    width: dimensions.width,
+    width: "1128px",
   };
 
   const LONGER_PARAGRAPH_DESCRIPTION = {
@@ -99,12 +99,12 @@ export default function ProjectView( ) {
                 >
                   <div className="main-landing-picture-container">
                     <div
-                      ref={targetRef}
                       onClick={(e) => {
                         // do not close projectview if anything inside modal content is clicked
                         e.stopPropagation();
                       }}
                       className="landing-picture-container"
+                      ref={targetRef}
                     >
                       <img
                         className="landing-picture"
