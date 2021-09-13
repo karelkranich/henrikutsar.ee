@@ -51,7 +51,7 @@ export default function ProjectView() {
   }, [slug]);
 
   const DESCRIPTIONS_CONTAINER = {
-    width: dimensions.width,
+    width: dimensions.height * 1.426,
     // border: "1px solid red",
   };
 
