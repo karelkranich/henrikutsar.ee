@@ -131,10 +131,8 @@ export default function ProjectView({ open, style, close }) {
                     <div>
                       <div className="project-details">
                         <div>
-                          {/* {console.log(typeof pilt.acf)} */}
                           <div className="project-client">
                             <div>{pilt.acf.vasak_esimene_tekst}</div>
-                            {/* {console.log(pilt)} */}
 
                             <div>{pilt.acf.vasak_teine_tekst}</div>
                           </div>
