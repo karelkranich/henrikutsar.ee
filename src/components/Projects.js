@@ -25,6 +25,8 @@ export default function Projects() {
     fetchData();
   }, []);
 
+  
+
   return (
     <section className="image-section">
       <div className="grid-container">
@@ -44,6 +46,7 @@ export default function Projects() {
               </Link>
               <div className="project-title project-title-2">
                 {/* {post.title.rendered} */}
+                {console.log(post.acf.slug)}
               </div>
             </div>
           ))}

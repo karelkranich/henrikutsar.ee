@@ -568,7 +568,7 @@
   .overlay-styles {
     z-index: 1000;
     height: 100%;
-    z-index: 911111111111111;
+    /* z-index: 911111111111111; */
   }
 
   /* PROJECT LANDING PICTURE */

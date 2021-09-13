@@ -11,7 +11,7 @@ export default function ProjectView() {
   const [posts, setPosts] = useState([]);
 
   const { slug } = useParams();
-
+  const [isOpen, setIsOpen] = useState(false);
   // GET THE WIDTH OF IMAGE ORDER TO SET WIDTH OF DESCRIPTION CONTAINER
   const targetRef = useRef();
 
@@ -42,6 +42,7 @@ export default function ProjectView() {
         `https://henrikutsar.ee/admin/wp-json/acf/v3/projektid?slug[]=${slug}`
       );
 
+      setIsOpen(true);
       setPosts(results.data);
     };
     fetchData();
@@ -50,7 +51,8 @@ export default function ProjectView() {
   }, [slug]);
 
   const DESCRIPTIONS_CONTAINER = {
-    width: dimensions.width,
+    width: dimensions.height * 1.425,
+    // border: "1px solid red",
   };
 
   const LONGER_PARAGRAPH_DESCRIPTION = {
@@ -74,143 +76,73 @@ export default function ProjectView() {
   const routeChange = () => {
     history.push("/");
   };
-
-  return ReactDom.createPortal(
-    <div>
-      {posts &&
-        posts.map((pilt) => (
-          <div
-            key={pilt.id}
-            className="overlay-styles"
-            style={OVERYLAY_STYLES}
-            onClick={routeChange}
-          >
-            <div className="larger-project-view">
-              <motion.div
-                initial={{
-                  transform: "translateY(-100%)",
-                }}
-                animate={{ transform: "translateY(0%)" }}
-                exit={{ transform: "translateY(0%)" }}
-                transition={{ duration: 0.1 }}
-              >
-                <div className="main-landing-picture-container">
-                  <div
-                    onClick={(e) => {
-                      // do not close projectview if anything inside modal content is clicked
-                      e.stopPropagation();
-                    }}
-                    className="landing-picture-container"
-                  >
-                    <img
-                      ref={targetRef}
-                      className="landing-picture"
-                      src={pilt.acf.thumbnaili_foto.url}
-                      alt="Savant"
-                    />
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* FIRST PARAGRAPHS AFTER PROJECT PICTURE*/}
-              <div
-                className="main-description-container"
-                style={PROJECT_VIEW_BACKGROUNDCOLOR}
-              >
-                <div
-                  onClick={(e) => {
-                    // do not close projectview if anything inside modal content is clicked
-                    e.stopPropagation();
+  if (isOpen) {
+    return ReactDom.createPortal(
+      <div>
+        {posts &&
+          posts.map((pilt) => (
+            <div
+              key={pilt.id}
+              className="overlay-styles"
+              style={OVERYLAY_STYLES}
+              onClick={routeChange}
+            >
+              <div className="larger-project-view">
+                <motion.div
+                  initial={{
+                    transform: "translateY(-100%)",
                   }}
-                  // style={DESCRIPTIONS_CONTAINER}
-
-                  style={DESCRIPTIONS_CONTAINER}
-                  className="descriptions-container"
+                  animate={{ transform: "translateY(0%)" }}
+                  exit={{ transform: "translateY(0%)" }}
+                  transition={{ duration: 0.1 }}
                 >
-                  <div>
-                    <div className="project-details">
-                      <div>
-                        <div className="project-client">
-                          <div>{pilt.acf.vasak_esimene_tekst}</div>
-
-                          <div>{pilt.acf.vasak_teine_tekst}</div>
-                        </div>
-
-                        <div className="year-cvi">
-                          <div>{pilt.acf.parem_esimene_tekst}</div>
-                          <div>{pilt.acf.parem_teine_tekst}</div>
-                        </div>
-                      </div>
+                  <div className="main-landing-picture-container">
+                    <div
+                      onClick={(e) => {
+                        // do not close projectview if anything inside modal content is clicked
+                        e.stopPropagation();
+                      }}
+                      className="landing-picture-container"
+                    >
+                      <img
+                        ref={targetRef}
+                        className="landing-picture"
+                        src={pilt.acf.thumbnaili_foto.url}
+                        alt="Savant"
+                      />
                     </div>
                   </div>
-                  {/* LONGER, DETAILED PARAGRAPH */}
-                  <div
-                    className="longer-paragraph-description"
-                    style={LONGER_PARAGRAPH_DESCRIPTION}
-                  >
-                    {pilt.acf.kirjeldus}
-                  </div>
-                  {/* PROJECT PICTURES*/}
-                  <div className="project-view-pictures">
-                    {pilt.acf.pildid &&
-                      pilt.acf.pildid.map((pildid) => (
-                        <div key={pildid.id} className="project-picture-size">
-                          <img src={pildid.url} alt="kai_keskus_2" />
-                        </div>
-                      ))}
-                  </div>
-                </div>
-              </div>
-            </div>
+                </motion.div>
 
-            <div
-              className="smaller-project-view"
-              onClick={(e) => {
-                // do not close projectview if anything inside modal content is clicked
-                e.stopPropagation();
-              }}
-            >
-              <motion.div
-                initial={{
-                  transform: "translateY(-100%)",
-                }}
-                animate={{ transform: "translateY(0%)" }}
-                exit={{ transform: "translateY(0%)" }}
-                transition={{ duration: 0.1 }}
-              >
-                <div
-                  style={PROJECT_VIEW_BACKGROUNDCOLOR}
-                  className="main-landing-picture-container"
-                >
-                  {pilt.acf.vaikse_ekraani_pilt &&
-                    pilt.acf.vaikse_ekraani_pilt.map((pildid) => (
-                      <div
-                        key={pildid.id}
-                        className="landing-picture-container"
-                      >
-                        <img
-                          className="landing-picture"
-                          src={pildid.sizes.medium_large}
-                          alt="trenn"
-                        />
-                      </div>
-                    ))}
-                </div>
                 {/* FIRST PARAGRAPHS AFTER PROJECT PICTURE*/}
                 <div
                   className="main-description-container"
                   style={PROJECT_VIEW_BACKGROUNDCOLOR}
                 >
-                  <div className="descriptions-container">
-                    <div className="project-details">
-                      <div className="project-client">
-                        <div>{pilt.acf.vasak_esimene_tekst}</div>
-                        <div>{pilt.acf.vasak_teine_tekst}</div>
-                      </div>
+                  <div
+                    onClick={(e) => {
+                      // do not close projectview if anything inside modal content is clicked
+                      e.stopPropagation();
+                    }}
+                    // style={DESCRIPTIONS_CONTAINER}
 
-                      <div className="year-cvi">
-                        <div>{pilt.acf.parem_esimene_tekst}</div>
-                        <div>{pilt.acf.parem_teine_tekst}</div>
+                    style={DESCRIPTIONS_CONTAINER}
+                    className="descriptions-container"
+                  >
+                    <div>
+                      <div className="project-details">
+                        <div>
+                          <div className="project-client">
+                            <div>{pilt.acf.vasak_esimene_tekst}</div>
+
+                            <div>{pilt.acf.vasak_teine_tekst}</div>
+                          </div>
+
+                          <div className="year-cvi">
+                            <div>{pilt.acf.parem_esimene_tekst}</div>
+                            <div>{pilt.acf.parem_teine_tekst}</div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                     {/* LONGER, DETAILED PARAGRAPH */}
@@ -225,28 +157,103 @@ export default function ProjectView() {
                       {pilt.acf.pildid &&
                         pilt.acf.pildid.map((pildid) => (
                           <div key={pildid.id} className="project-picture-size">
-                            <img
-                              src={pildid.sizes.medium_large}
-                              alt="kai_keskus_2"
-                            />
+                            <img src={pildid.url} alt="kai_keskus_2" />
                           </div>
                         ))}
                     </div>
                   </div>
                 </div>
-              </motion.div>
-            </div>
-          </div>
-        ))}
-    </div>,
-    document.getElementById("project-view")
-  );
+              </div>
 
-  // return (
-  //   <div className="main-buffer-container">
-  //     <div className="buffer-container">
-  //       <img className="buffer-image" src={buffer} alt="" />
-  //     </div>
-  //   </div>
-  // );
+              <div
+                className="smaller-project-view"
+                onClick={(e) => {
+                  // do not close projectview if anything inside modal content is clicked
+                  e.stopPropagation();
+                }}
+              >
+                <motion.div
+                  initial={{
+                    transform: "translateY(-100%)",
+                  }}
+                  animate={{ transform: "translateY(0%)" }}
+                  exit={{ transform: "translateY(0%)" }}
+                  transition={{ duration: 0.1 }}
+                >
+                  <div
+                    style={PROJECT_VIEW_BACKGROUNDCOLOR}
+                    className="main-landing-picture-container"
+                  >
+                    {pilt.acf.vaikse_ekraani_pilt &&
+                      pilt.acf.vaikse_ekraani_pilt.map((pildid) => (
+                        <div
+                          key={pildid.id}
+                          className="landing-picture-container"
+                        >
+                          <img
+                            className="landing-picture"
+                            src={pildid.sizes.medium_large}
+                            alt="trenn"
+                          />
+                        </div>
+                      ))}
+                  </div>
+                  {/* FIRST PARAGRAPHS AFTER PROJECT PICTURE*/}
+                  <div
+                    className="main-description-container"
+                    style={PROJECT_VIEW_BACKGROUNDCOLOR}
+                  >
+                    <div className="descriptions-container">
+                      <div className="project-details">
+                        <div className="project-client">
+                          <div>{pilt.acf.vasak_esimene_tekst}</div>
+                          <div>{pilt.acf.vasak_teine_tekst}</div>
+                        </div>
+
+                        <div className="year-cvi">
+                          <div>{pilt.acf.parem_esimene_tekst}</div>
+                          <div>{pilt.acf.parem_teine_tekst}</div>
+                        </div>
+                      </div>
+                      {/* LONGER, DETAILED PARAGRAPH */}
+                      <div
+                        className="longer-paragraph-description"
+                        style={LONGER_PARAGRAPH_DESCRIPTION}
+                      >
+                        {pilt.acf.kirjeldus}
+                      </div>
+                      {/* PROJECT PICTURES*/}
+                      <div className="project-view-pictures">
+                        {pilt.acf.pildid &&
+                          pilt.acf.pildid.map((pildid) => (
+                            <div
+                              key={pildid.id}
+                              className="project-picture-size"
+                            >
+                              <img
+                                src={pildid.sizes.medium_large}
+                                alt="kai_keskus_2"
+                              />
+                            </div>
+                          ))}
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+          ))}
+      </div>,
+      document.getElementById("project-view")
+    );
+  }
+  if (!isOpen) {
+    return (
+      <div className="main-buffer-container">
+        <div className="buffer-container">
+          <img className="buffer-image" src={buffer} alt="" />
+        </div>
+      </div>
+    );
+  }
 }
