@@ -220,6 +220,19 @@
   .smaller-project-view {
     display: none;
   }
+  /* buffer loader css */
+  .buffer-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 300px;
+    max-height: 300px;
+    transform: translate(-50%, -50%);
+  }
+
+  .buffer-image {
+    max-width: 100%;
+  }
 
   .overlay-styles {
     z-index: 1000;
@@ -528,6 +541,30 @@
   }
 
   /* PROJECT VIEW CSS */
+
+  /* Fetch API loading animation */
+  .main-buffer-container {
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    z-index: 1;
+    width: 100vw;
+    backdrop-filter: blur(8px);
+  }
+
+  .buffer-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 300px;
+    max-height: 300px;
+    transform: translate(-50%, -50%);
+  }
+
+  .buffer-image {
+    max-width: 100%;
+  }
+
   .overlay-styles {
     z-index: 1000;
     height: 100%;
@@ -544,13 +581,12 @@
     display: flex;
     backdrop-filter: blur(8px);
     justify-content: center;
-    /* border: 5px solid red; */
   }
 
   .landing-picture-container {
     width: auto;
     height: 100%;
-    /* border:5px solid red; */
+ 
   }
 
   .landing-picture {
@@ -904,9 +940,9 @@
 
 @media (max-width: 800px) and (min-width: 641px) {
   /* break */
-  .smaller-project-view {
+  /* .smaller-project-view {
     display: none;
-  }
+  } */
   .info-grid-parent {
     position: absolute;
     top: 0;
@@ -1021,6 +1057,7 @@
     font-size: clamp(18px, 5vw, 24px);
     font-size: 24px;
     line-height: 27.6px;
+
     min-height: 0vw;
   }
 
@@ -1181,6 +1218,29 @@
   /* PROJECT VIEW CSS */
   .larger-project-view {
     display: none;
+  }
+
+  /* Fetch API loading animation */
+  .main-buffer-container {
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    z-index: 1999;
+    width: 100vw;
+    backdrop-filter: blur(8px);
+  }
+
+  .buffer-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 300px;
+    max-height: 300px;
+    transform: translate(-50%, -50%);
+  }
+
+  .buffer-image {
+    max-width: 100%;
   }
 
   .project-nav {
@@ -1539,6 +1599,29 @@
   /* PROJECT VIEW CSS */
   .larger-project-view {
     display: none;
+  }
+
+  /* Fetch API loading animation */
+  .main-buffer-container {
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    z-index: 19999;
+    width: 100vw;
+    backdrop-filter: blur(8px);
+  }
+
+  .buffer-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 300px;
+    max-height: 300px;
+    transform: translate(-50%, -50%);
+  }
+
+  .buffer-image {
+    max-width: 100%;
   }
 
   /* OVERLAY STYLES */
