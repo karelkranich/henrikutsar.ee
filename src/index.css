@@ -1,12 +1,16 @@
 /* MONSTER VIEW */
 @media (min-width: 1441px) {
   * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
     font-family: Helvetica;
   }
 
   html,
   body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -313,11 +317,17 @@
 /* LAPTOP PAGE VIEW 1440PX - 1178PX */
 @media (max-width: 1440px) and (min-width: 1178px) {
   * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
     font-family: Helvetica;
   }
   html,
   body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
     margin: 0;
     padding: 0;
   }
@@ -647,11 +657,15 @@
 /* IPAD PAGE VIEW 1177-640  */
 @media (max-width: 1177px) and (min-width: 641px) {
   * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
     font-family: Helvetica;
   }
   html,
   body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     margin: 0;
     padding: 0;
   }
@@ -1019,11 +1033,15 @@
 /* MINI-IPAD PAGE VIEW 640-375  */
 @media (max-width: 640px) and (min-width: 376px) {
   * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
     font-family: Helvetica;
   }
   html,
   body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     margin: 0;
     padding: 0;
   }
@@ -1366,11 +1384,15 @@
 /* MOBILE PAGE VIEW 640-375  */
 @media (max-width: 375px) {
   * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
     font-family: Helvetica;
   }
   html,
   body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     margin: 0;
     padding: 0;
   }
