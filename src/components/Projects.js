@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 export default function Projects() {
   // FETCH DATAFROM WORDPRESS REST API
-  const [posts, setPosts] = useState("");
+  const [posts, setPosts] = useState([]);
 
   // GET THE WIDTH OF IMAGE ORDER TO SET WIDTH OF DESCRIPTION CONTAINER
 
@@ -24,8 +24,6 @@ export default function Projects() {
     hashHandler();
     fetchData();
   }, []);
-
-  
 
   return (
     <section className="image-section">

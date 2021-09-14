@@ -35,18 +35,17 @@ function infoModal({ open, style, close }) {
                 <div className="main-info-grid-container">
                   <div className="info-grid-container">
                     <div className="info-item info-item-1">
-                      Hei! Olen Võrumaalt pärit vabakutseline graafiline
-                      disainer. Keskendun peamiselt identiteedilahenduste
-                      väljatöötamisele ning trükindusele – plakatid, brošüürid,
-                      erinevad väikeformaadid, ning eriti meeldib mulle
-                      disainida raamatuid ja perioodikat. Kuulmiseni!
+                      Olen Võrumaalt pärit, üle Eesti tegutsev vabakutseline
+                      graafiline disainer. Keskendun peamiselt visuaalsete
+                      identiteetide väljatöötamisele ning kõikvõimalikele trüki-
+                      ja digilahendustele. Kuulmiseni!
                     </div>
 
                     <div className="info-item info-item-2">
                       Kliente: Võru Linnavalitsus, Eesti Kunstiakadeemia, Miina
-                      Härma Gümnaasium, Võru Kesklinna Kool, Ida-Tallinna
-                      Keskhaigla, Kai kunstikeskus, PRAXIS Mõttekoda, Von Krahli
-                      Aed jt.
+                      Härma Gümnaasium, Võru Kesklinna Kool, Vana-Võromaa
+                      kultuurikoda, Kai kunstikeskus, PRAXIS Mõttekoda, Von
+                      Krahli Aed, jt.
                     </div>
 
                     <div className="info-item info-item-3">

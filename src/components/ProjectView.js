@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 export default function ProjectView() {
   // FETCH DATA FROM WORDPRESS REST API
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState("");
 
   const { slug } = useParams();
   const [isOpen, setIsOpen] = useState(false);
@@ -37,6 +37,8 @@ export default function ProjectView() {
     }
     window.addEventListener("resize", handleResize);
 
+
+
     const fetchData = async () => {
       const results = await axios(
         `https://henrikutsar.ee/admin/wp-json/acf/v3/projektid?slug[]=${slug}`
@@ -45,13 +47,16 @@ export default function ProjectView() {
       setIsOpen(true);
       setPosts(results.data);
     };
+
     fetchData();
     handleResize();
     hashHandler();
   }, [slug]);
 
+  // console.log(dimensions.height * 1.5);
+
   const DESCRIPTIONS_CONTAINER = {
-    width: dimensions.height * 1.426,
+    width: dimensions.width,
     // border: "1px solid red",
   };
 
@@ -88,6 +93,7 @@ export default function ProjectView() {
               onClick={routeChange}
             >
               <div className="larger-project-view">
+                {/* WRAPPER */}
                 <motion.div
                   initial={{
                     transform: "translateY(-100%)",
@@ -96,6 +102,7 @@ export default function ProjectView() {
                   exit={{ transform: "translateY(0%)" }}
                   transition={{ duration: 0.2 }}
                 >
+                  {/* PARENT */}
                   <div className="main-landing-picture-container">
                     <div
                       onClick={(e) => {
