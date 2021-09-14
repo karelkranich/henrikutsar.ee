@@ -21,12 +21,6 @@ export default function ProjectView() {
   });
 
   useEffect(() => {
-    // TO MAKE SURE THE BODY OVERFLOW, WHEN PROJECT IS OPEN, IS NEVER UNSET
-    function hashHandler() {
-      document.querySelector("body").style.overflow = "hidden";
-    }
-    window.addEventListener("hashchange", hashHandler, true);
-
     function handleResize() {
       if (targetRef.current) {
         setDimensions({
@@ -37,7 +31,15 @@ export default function ProjectView() {
     }
     window.addEventListener("resize", handleResize);
 
+    handleResize();
+  });
 
+  useEffect(() => {
+    // TO MAKE SURE THE BODY OVERFLOW, WHEN PROJECT IS OPEN, IS NEVER UNSET
+    function hashHandler() {
+      document.querySelector("body").style.overflow = "hidden";
+    }
+    window.addEventListener("hashchange", hashHandler, true);
 
     const fetchData = async () => {
       const results = await axios(
@@ -49,7 +51,7 @@ export default function ProjectView() {
     };
 
     fetchData();
-    handleResize();
+
     hashHandler();
   }, [slug]);
 
