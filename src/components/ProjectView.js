@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ReactDom from "react-dom";
 import axios from "axios";
-
 import { useHistory } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -16,23 +15,44 @@ export default function ProjectView() {
   const targetRef = useRef();
 
   const [dimensions, setDimensions] = useState({
-    height: window.innerHeight,
     width: window.innerWidth,
   });
+
+  // useEffect(() => {
+  //   // TO MAKE SURE THE BODY OVERFLOW, WHEN PROJECT IS OPEN, IS NEVER UNSET
+  //   function hashHandler() {
+  //     document.querySelector("body").style.overflow = "hidden";
+  //   }
+  //   window.addEventListener("hashchange", hashHandler, true);
+
+  //   const fetchData = async () => {
+  //     const results = await axios(
+  //       `https://henrikutsar.ee/admin/wp-json/acf/v3/projektid?slug[]=${slug}`
+  //     );
+
+  //     setIsOpen(true);
+  //     setPosts(results.data);
+  //   };
+
+  //   fetchData();
+
+  //   hashHandler();
+  // }, [slug]);
 
   useEffect(() => {
     function handleResize() {
       if (targetRef.current) {
         setDimensions({
           width: targetRef.current.offsetWidth,
-          height: targetRef.current.offsetHeight,
         });
       }
     }
+    if (posts.length > 0) {
+      handleResize();
+    }
     window.addEventListener("resize", handleResize);
-
-    handleResize();
-  });
+    return () => window.removeEventListener("resize", handleResize);
+  }, [posts]);
 
   useEffect(() => {
     // TO MAKE SURE THE BODY OVERFLOW, WHEN PROJECT IS OPEN, IS NEVER UNSET
@@ -51,16 +71,8 @@ export default function ProjectView() {
     };
 
     fetchData();
-
     hashHandler();
   }, [slug]);
-
-  // console.log(dimensions.height * 1.5);
-
-  const DESCRIPTIONS_CONTAINER = {
-    width: dimensions.width,
-    // border: "1px solid red",
-  };
 
   const LONGER_PARAGRAPH_DESCRIPTION = {
     paddingTop: "3.4%",
@@ -135,7 +147,7 @@ export default function ProjectView() {
                     }}
                     // style={DESCRIPTIONS_CONTAINER}
 
-                    style={DESCRIPTIONS_CONTAINER}
+                    style={{ width: dimensions.width }}
                     className="descriptions-container"
                   >
                     <div>

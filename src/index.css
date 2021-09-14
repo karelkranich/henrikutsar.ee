@@ -585,13 +585,13 @@
   }
 
   .landing-picture-container {
-    width: auto;
+    /* width: auto; */
     height: 100%;
   }
 
   .landing-picture {
     max-height: 100%;
-    max-width: 100%;
+    /* max-width: 100%;  */
   }
 
   /* PROJECT VIEW - TWO LINE DESCRIPTION SECTION */
