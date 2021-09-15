@@ -58,6 +58,13 @@
   .project-title {
     display: none;
   }
+  .smaller-screen-view {
+    display: none;
+  }
+
+  .hide-nav-element {
+    cursor: none;
+  }
 
   /* GRID CSS */
   .image-section {
@@ -320,7 +327,8 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    font-family: Helvetica;
+    font-family: "Helvetica";
+    /* font-family: "HelveticaNeue-Light"; */
   }
   html,
   body {
@@ -333,7 +341,6 @@
   .switch-wrapper {
     position: relative;
   }
-
   /* NAVBAR CSS */
   .header-container {
     font-weight: 400;
@@ -341,11 +348,6 @@
     top: 0;
     margin-top: 21px;
     z-index: 1;
-  }
-
-  .list-items {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
 
   .nav {
@@ -361,12 +363,21 @@
     z-index: 0;
   }
 
+  .henri-kutsar-element {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
   .middle-nav-element {
     cursor: default;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   .right-nav-element {
     cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   .flex-container {
@@ -379,6 +390,10 @@
   }
 
   /* HIDE AND MODIFY ELEMENTS */
+
+  .smaller-screen-view {
+    display: none;
+  }
   .project-title {
     display: none;
   }
@@ -451,30 +466,6 @@
     background-color: #333333;
   }
 
-  /* FOOTER CSS */
-  .main-footer-container {
-    color: #000000;
-    font-weight: 400;
-    font-size: 1em;
-    background: #f3f2f2;
-    margin: 0%;
-  }
-
-  .footer-flex {
-    margin: 0%;
-    padding-top: 0.9%;
-    padding-bottom: 0.9%;
-    display: flex;
-    justify-content: space-between;
-    height: 100%;
-    align-items: center;
-  }
-
-  .footer-container div {
-    margin-right: 2.5%;
-    margin-left: 2.5%;
-  }
-
   .info-overlay-styles {
     position: fixed;
     top: 0;
@@ -491,7 +482,6 @@
   .info-content-styles {
     width: 100vw;
     height: 100%;
-    font-weight: 400;
     font-family: Helvetica;
     color: white;
     background-color: #333333;
@@ -666,8 +656,6 @@
   /* NAVBAR CSS */
 
   .header-container {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     font-weight: 400;
     position: fixed;
     top: 0;
@@ -700,8 +688,27 @@
     color: inherit;
     text-decoration: none;
   }
+  .henri-kutsar-element {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .middle-nav-element {
+    cursor: default;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .right-nav-element {
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
   /* HIDE AND MODIFY ELEMENTS */
+  .smaller-screen-view {
+    display: none;
+  }
   .project-title {
     display: none;
   }
@@ -950,6 +957,9 @@
 }
 
 @media (max-width: 800px) and (min-width: 641px) {
+  .smaller-screen-view {
+    display: none;
+  }
   .info-overlay-styles {
     position: fixed;
     top: 0;
@@ -1030,6 +1040,9 @@
   }
 
   /* HIDE AND MODIFY ELEMENTS */
+  .bigger-screen-view {
+    display: none;
+  }
   .hide-nav-element {
     display: none;
   }
@@ -1037,8 +1050,6 @@
   /* NAVBAR CSS */
 
   .header-container {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     font-weight: 400;
     z-index: 3;
   }
@@ -1061,7 +1072,8 @@
     font-size: clamp(18px, 5vw, 24px);
     font-size: 24px;
     line-height: 27.6px;
-
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     min-height: 0vw;
   }
 
@@ -1072,6 +1084,11 @@
     line-height: 18.4px;
     cursor: pointer;
     min-height: 0vw;
+  }
+
+  .right-nav-element {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   .list-items a {
@@ -1130,30 +1147,6 @@
     margin-right: auto;
     margin-left: auto;
     /* border:5px solid red; */
-  }
-
-  /* FOOTER CSS */
-  .main-footer-container {
-    color: #000000;
-    font-weight: 400;
-    font-size: 1em;
-    background: #f3f2f2;
-    margin: 0%;
-  }
-
-  .footer-flex {
-    margin: 0%;
-    padding-top: 0.9%;
-    padding-bottom: 0.9%;
-    display: flex;
-    justify-content: space-between;
-    height: 100%;
-    align-items: center;
-  }
-
-  .footer-container div {
-    margin-right: 2.5%;
-    margin-left: 2.5%;
   }
 
   .info-overlay-styles {
@@ -1376,11 +1369,12 @@
 
   .header-container {
     font-weight: 400;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
 
   /* HIDE AND MODIFY ELEMENTS */
+  .bigger-screen-view {
+    display: none;
+  }
   .hide-nav-element {
     display: none;
   }
@@ -1395,6 +1389,8 @@
     font-size: 20px;
     line-height: 27.6px;
     cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   .info-contact-element {
@@ -1404,7 +1400,11 @@
     cursor: pointer;
     font-size: 14px;
     line-height: 18.4px;
-    /* border:2px solid red; */
+  }
+
+  .right-nav-element {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   .nav {
