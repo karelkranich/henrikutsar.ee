@@ -113,7 +113,8 @@ export default function ProjectView() {
                   }}
                   animate={{ transform: "translateY(0%)" }}
                   exit={{ transform: "translateY(0%)" }}
-                  transition={({ duration: 0.2 }, { ease: "easeInOut" })}
+                  transition={({ duration: 0.2 })}
+                  //          transition={({ duration: 0.2 }, { ease: "easeInOut" })}
                 >
                   <div className="main-landing-picture-container">
                     <div
