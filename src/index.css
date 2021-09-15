@@ -473,13 +473,6 @@
     margin-left: 2.5%;
   }
 
-  .info-grid-parent {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-
   .info-overlay-styles {
     position: fixed;
     top: 0;
@@ -488,8 +481,11 @@
     right: 0;
     bottom: 0;
     height: 100%;
+    width: 100%;
     z-index: 232323233232;
     cursor: pointer;
+    overflow: scroll;
+    /* border:5px solid red; */
   }
 
   .info-content-styles {

@@ -18,7 +18,7 @@ const Header = () => {
       transform: "translateX(0px)",
     },
 
-    config: { duration: 140 },
+    config: { duration: 190 },
   });
 
   return (
