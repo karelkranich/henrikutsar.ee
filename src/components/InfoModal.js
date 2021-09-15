@@ -58,9 +58,8 @@ function infoModal({ open, style, close }) {
                 </div>
 
                 <div className="info-item info-item-6 computer-info-layout">
-                  <a href="tel:372-529-3741">+372 529 3741</a>{" "}
+                  <a href="tel:372-529-3741">+372 529 3741</a>
                   <div>
-                    {" "}
                     <a href="mailto:info@henrikutsar.ee">info@henrikutsar.ee</a>
                   </div>
                 </div>
@@ -72,11 +71,11 @@ function infoModal({ open, style, close }) {
                   </div>
 
                   <div className="info-item info-item-6">
-                    <a href="tel:372-529-3741">+372 529 3741</a>{" "}
+                    <a href="tel:372-529-3741">+372 529 3741</a>
                     <div>
                       <a href="mailto:info@henrikutsar.ee">
                         info@henrikutsar.ee
-                      </a>{" "}
+                      </a>
                     </div>
                   </div>
                 </div>

@@ -335,15 +335,17 @@
   }
 
   /* NAVBAR CSS */
-
   .header-container {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     font-weight: 400;
     position: fixed;
     top: 0;
     margin-top: 21px;
     z-index: 1;
+  }
+
+  .list-items {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   .nav {
@@ -484,8 +486,6 @@
     width: 100%;
     z-index: 232323233232;
     cursor: pointer;
-    overflow: scroll;
-    /* border:5px solid red; */
   }
 
   .info-content-styles {
@@ -950,22 +950,11 @@
 }
 
 @media (max-width: 800px) and (min-width: 641px) {
-  /* break */
-  /* .smaller-project-view {
-    display: none;
-  } */
-  .info-grid-parent {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-
   .info-overlay-styles {
     position: fixed;
     top: 0;
     /* max-height: 50%; */
-    overflow: hidden;
+    overflow: scroll;
     left: 0;
     right: 0;
     bottom: 0;
@@ -1167,14 +1156,6 @@
     margin-left: 2.5%;
   }
 
-  .info-grid-parent {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 232323233232;
-  }
-
   .info-overlay-styles {
     position: fixed;
     top: 0;
@@ -1184,6 +1165,7 @@
     height: 100%;
     backdrop-filter: blur(8px);
     z-index: 2323232332322;
+    /* border: 5px solid red; */
   }
 
   .info-content-styles {
