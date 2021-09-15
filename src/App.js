@@ -11,7 +11,7 @@ function App() {
     <BrowserRouter basename="/">
       <Header />
       <Grid />
-      <AnimatePresence exitBeforeEnter>
+      <AnimatePresence >
         <Switch>
           <Route path="/" component={HomePage} exact></Route>
           <Route path={`/:slug`} component={ProjectView}></Route>
