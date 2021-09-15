@@ -8,7 +8,6 @@ const Header = () => {
   const transitions = useTransition(isOpen, null, {
     from: {
       transform: "translateY(-100%)",
-
       transitionTimingFunction: "ease-in-out",
     },
     enter: {
@@ -19,11 +18,11 @@ const Header = () => {
       transform: "translateX(0px)",
     },
 
-    config: { duration: 125 },
+    config: { duration: 140 },
   });
 
   return (
-    <header className="header-container ">
+    <header className="header-container">
       <nav className="nav">
         <div className="list-items henri-kutsar-element">
           <a href="/">HENRI KUTSAR</a>

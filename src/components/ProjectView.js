@@ -107,7 +107,6 @@ export default function ProjectView() {
               onClick={routeChange}
             >
               <div className="larger-project-view">
-                {/* WRAPPER */}
                 <motion.div
                   initial={{
                     transform: "translateY(-100%)",
@@ -115,8 +114,10 @@ export default function ProjectView() {
                   animate={{ transform: "translateY(0%)" }}
                   exit={{ transform: "translateY(0%)" }}
                   transition={{ duration: 0.2 }}
+                  transition={{
+                    ease: "easeInOut",
+                  }}
                 >
-                  {/* PARENT */}
                   <div className="main-landing-picture-container">
                     <div
                       onClick={(e) => {
