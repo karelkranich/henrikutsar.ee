@@ -33,7 +33,7 @@ export default function Projects() {
           {posts &&
             posts.map((post) => (
               <div
-                style={{ width: `${post.acf.pildi_laius}` + "%" }}
+                style={{ width: `${post.acf.pildi_laius}%`}}
                 key={post.id}
                 className="grid-item "
               >

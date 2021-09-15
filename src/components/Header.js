@@ -34,17 +34,19 @@ const Header = () => {
           <div className="right-nav-element" onClick={() => setIsOpen(true)}>
             INFO & KONTAKT
           </div>
-          {transitions.map(
-            ({ item, key, props: style }) =>
-              item && (
-                <InfoModal
-                  open={isOpen}
-                  style={style}
-                  key={key}
-                  close={() => setIsOpen(false)}
-                ></InfoModal>
-              )
-          )}
+          <div>
+            {transitions.map(
+              ({ item, key, props: style }) =>
+                item && (
+                  <InfoModal
+                    open={isOpen}
+                    style={style}
+                    key={key}
+                    close={() => setIsOpen(false)}
+                  ></InfoModal>
+                )
+            )}
+          </div>
         </div>
       </nav>
     </header>
