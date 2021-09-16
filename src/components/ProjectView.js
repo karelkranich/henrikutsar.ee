@@ -10,34 +10,14 @@ export default function ProjectView() {
   const [posts, setPosts] = useState("");
 
   const { slug } = useParams();
+  // TO SET THE BUFFER
   const [isOpen, setIsOpen] = useState(false);
+
   // GET THE WIDTH OF IMAGE ORDER TO SET WIDTH OF DESCRIPTION CONTAINER
   const targetRef = useRef();
-
   const [dimensions, setDimensions] = useState({
     width: window.innerWidth,
   });
-
-  // useEffect(() => {
-  //   // TO MAKE SURE THE BODY OVERFLOW, WHEN PROJECT IS OPEN, IS NEVER UNSET
-  //   function hashHandler() {
-  //     document.querySelector("body").style.overflow = "hidden";
-  //   }
-  //   window.addEventListener("hashchange", hashHandler, true);
-
-  //   const fetchData = async () => {
-  //     const results = await axios(
-  //       `https://henrikutsar.ee/admin/wp-json/acf/v3/projektid?slug[]=${slug}`
-  //     );
-
-  //     setIsOpen(true);
-  //     setPosts(results.data);
-  //   };
-
-  //   fetchData();
-
-  //   hashHandler();
-  // }, [slug]);
 
   useEffect(() => {
     function handleResize() {
@@ -86,10 +66,6 @@ export default function ProjectView() {
     overflow: "scroll",
   };
 
-  const PROJECT_VIEW_BACKGROUNDCOLOR = {
-    backgroundColor: "rgba(253, 241, 244)",
-  };
-
   // GO BACK TO PREVIOUS PAGE, CHANGE BODY OVERFLOW TO UNSET
   let history = useHistory();
   const routeChange = () => {
@@ -118,7 +94,7 @@ export default function ProjectView() {
                   <div className="main-landing-picture-container">
                     <div
                       onClick={(e) => {
-                        // do not close projectview if anything inside modal content is clicked
+                        // do not close projectview if anything inside projectview content is clicked
                         e.stopPropagation();
                       }}
                       className="landing-picture-container"
@@ -126,8 +102,8 @@ export default function ProjectView() {
                       <img
                         ref={targetRef}
                         className="landing-picture"
-                        src={pilt.acf.thumbnaili_foto.url}
-                        alt="Savant"
+                        src={pilt.acf.viewporti_foto.url}
+                        alt={slug}
                       />
                     </div>
                   </div>
@@ -136,11 +112,11 @@ export default function ProjectView() {
                 {/* FIRST PARAGRAPHS AFTER PROJECT PICTURE*/}
                 <div
                   className="main-description-container"
-                  style={PROJECT_VIEW_BACKGROUNDCOLOR}
+                  style={{ backgroundColor: pilt.acf.projektivaate_taustavarv }}
                 >
                   <div
                     onClick={(e) => {
-                      // do not close projectview if anything inside modal content is clicked
+                      // do not close projectview if anything inside projectview content is clicked
                       e.stopPropagation();
                     }}
                     // style={DESCRIPTIONS_CONTAINER}
@@ -150,17 +126,34 @@ export default function ProjectView() {
                   >
                     <div>
                       <div className="project-details">
-                        <div>
-                          <div className="project-client">
-                            <div>{pilt.acf.vasak_esimene_tekst}</div>
+                        <div className="project-client">
+                          <div
+                            className="remove-padding"
+                            dangerouslySetInnerHTML={{
+                              __html: pilt.acf.vasak_esimene_tekst,
+                            }}
+                          />
+                          <div
+                            className="remove-padding"
+                            dangerouslySetInnerHTML={{
+                              __html: pilt.acf.vasak_teine_tekst,
+                            }}
+                          />
+                        </div>
 
-                            <div>{pilt.acf.vasak_teine_tekst}</div>
-                          </div>
-
-                          <div className="year-cvi">
-                            <div>{pilt.acf.parem_esimene_tekst}</div>
-                            <div>{pilt.acf.parem_teine_tekst}</div>
-                          </div>
+                        <div className="year-cvi">
+                          <div
+                            className="remove-padding"
+                            dangerouslySetInnerHTML={{
+                              __html: pilt.acf.parem_esimene_tekst,
+                            }}
+                          />
+                          <div
+                            className="remove-padding"
+                            dangerouslySetInnerHTML={{
+                              __html: pilt.acf.parem_teine_tekst,
+                            }}
+                          />
                         </div>
                       </div>
                     </div>
@@ -169,14 +162,19 @@ export default function ProjectView() {
                       className="longer-paragraph-description"
                       style={LONGER_PARAGRAPH_DESCRIPTION}
                     >
-                      {pilt.acf.kirjeldus}
+                      <div
+                        className="remove-padding"
+                        dangerouslySetInnerHTML={{
+                          __html: pilt.acf.kirjeldus,
+                        }}
+                      />
                     </div>
                     {/* PROJECT PICTURES*/}
                     <div className="project-view-pictures">
                       {pilt.acf.pildid &&
                         pilt.acf.pildid.map((pildid) => (
                           <div key={pildid.id} className="project-picture-size">
-                            <img src={pildid.url} alt="kai_keskus_2" />
+                            <img src={pildid.url} alt={slug} />
                           </div>
                         ))}
                     </div>
@@ -187,7 +185,7 @@ export default function ProjectView() {
               <div
                 className="smaller-project-view"
                 onClick={(e) => {
-                  // do not close projectview if anything inside modal content is clicked
+                  // do not close projectview if anything inside projectview content is clicked
                   e.stopPropagation();
                 }}
               >
@@ -197,36 +195,60 @@ export default function ProjectView() {
                   }}
                   animate={{ transform: "translateY(0%)" }}
                   exit={{ transform: "translateY(0%)" }}
-                  transition={{ duration: 0.2 }}
+                  transition={({ duration: 0.2 }, { ease: "easeInOut" })}
                 >
                   <div
-                    style={PROJECT_VIEW_BACKGROUNDCOLOR}
+                    style={{
+                      backgroundColor: pilt.acf.projektivaate_taustavarv,
+                    }}
                     className="main-landing-picture-container"
                   >
                     <div className="landing-picture-container">
                       <img
                         className="landing-picture"
-                        src={pilt.acf.thumbnaili_foto.sizes.medium_large}
-                        alt="trenn"
+                        src={pilt.acf.viewporti_foto.sizes.medium_large}
+                        alt={slug}
                       />
                     </div>
                   </div>
-                  {/* {console.log(pilt.acf.thumbnaili_foto.sizes.medium_large)} */}
+
                   {/* FIRST PARAGRAPHS AFTER PROJECT PICTURE*/}
                   <div
                     className="main-description-container"
-                    style={PROJECT_VIEW_BACKGROUNDCOLOR}
+                    style={{
+                      backgroundColor: pilt.acf.projektivaate_taustavarv,
+                    }}
                   >
                     <div className="descriptions-container">
                       <div className="project-details">
                         <div className="project-client">
-                          <div>{pilt.acf.vasak_esimene_tekst}</div>
-                          <div>{pilt.acf.vasak_teine_tekst}</div>
+                          <div
+                            className="remove-padding"
+                            dangerouslySetInnerHTML={{
+                              __html: pilt.acf.vasak_esimene_tekst,
+                            }}
+                          />
+                          <div
+                            className="remove-padding"
+                            dangerouslySetInnerHTML={{
+                              __html: pilt.acf.vasak_teine_tekst,
+                            }}
+                          />
                         </div>
 
                         <div className="year-cvi">
-                          <div>{pilt.acf.parem_esimene_tekst}</div>
-                          <div>{pilt.acf.parem_teine_tekst}</div>
+                          <div
+                            className="remove-padding"
+                            dangerouslySetInnerHTML={{
+                              __html: pilt.acf.parem_esimene_tekst,
+                            }}
+                          />
+                          <div
+                            className="remove-padding"
+                            dangerouslySetInnerHTML={{
+                              __html: pilt.acf.parem_teine_tekst,
+                            }}
+                          />
                         </div>
                       </div>
                       {/* LONGER, DETAILED PARAGRAPH */}
@@ -234,7 +256,12 @@ export default function ProjectView() {
                         className="longer-paragraph-description"
                         style={LONGER_PARAGRAPH_DESCRIPTION}
                       >
-                        {pilt.acf.kirjeldus}
+                        <div
+                          className="remove-padding"
+                          dangerouslySetInnerHTML={{
+                            __html: pilt.acf.kirjeldus,
+                          }}
+                        />
                       </div>
                       {/* PROJECT PICTURES*/}
                       <div className="project-view-pictures">
@@ -244,10 +271,7 @@ export default function ProjectView() {
                               key={pildid.id}
                               className="project-picture-size"
                             >
-                              <img
-                                src={pildid.sizes.medium_large}
-                                alt="kai_keskus_2"
-                              />
+                              <img src={pildid.sizes.medium_large} alt={slug} />
                             </div>
                           ))}
                       </div>
@@ -264,9 +288,7 @@ export default function ProjectView() {
   if (!isOpen) {
     return (
       <div className="main-buffer-container">
-        <div className="buffer-container">
-          {/* <img className="buffer-image" src={buffer} alt="" /> */}
-        </div>
+        <div className="buffer-container"></div>
       </div>
     );
   }

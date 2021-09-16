@@ -31,18 +31,27 @@
     justify-content: space-between;
     min-height: 0vw;
     font-size: clamp(1.2rem, 1.6vw, 22px);
-    font-size: 28px;
+    font-size: 26px;
     margin-top: 0px;
     left: 2.45%;
     right: 2.45%;
   }
 
+  .henri-kutsar-element {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
   .middle-nav-element {
     cursor: default;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   .right-nav-element {
     cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   .flex-container {
@@ -102,6 +111,9 @@
   }
 
   /* HOVER */
+  .remove-padding p {
+    margin: 8px;
+  }
 
   .hover-text-style {
     padding: 13px;
@@ -128,30 +140,6 @@
     background-color: #333333;
   }
 
-  /* FOOTER CSS */
-  .main-footer-container {
-    color: #000000;
-    font-weight: 400;
-    font-size: 1em;
-    background: #f3f2f2;
-    margin: 0%;
-  }
-
-  .footer-flex {
-    margin: 0%;
-    padding-top: 0.9%;
-    padding-bottom: 0.9%;
-    display: flex;
-    justify-content: space-between;
-    height: 100%;
-    align-items: center;
-  }
-
-  .footer-container div {
-    margin-right: 2.5%;
-    margin-left: 2.5%;
-  }
-
   .info-grid-parent {
     position: fixed;
     top: 0;
@@ -168,6 +156,7 @@
     height: 100%;
     backdrop-filter: blur(8px);
     cursor: pointer;
+    overflow: scroll;
   }
 
   .info-content-styles {
@@ -186,7 +175,6 @@
     height: 100%;
     padding: 1.7% 2.5% 1.7% 2.5%;
     line-height: 1.5em;
-    /* border: 5px solid red; */
   }
 
   .info-grid-container {
@@ -239,10 +227,6 @@
     max-width: 300px;
     max-height: 300px;
     transform: translate(-50%, -50%);
-  }
-
-  .buffer-image {
-    max-width: 100%;
   }
 
   .overlay-styles {
@@ -425,23 +409,21 @@
     cursor: pointer;
     position: relative;
     max-height: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    /* border:1px solid red; */
-  }
-
-  .optional-size {
-    max-width: 46.7%;
+    /* margin-right: auto; */
+    /* margin-left: auto; */
   }
 
   .grid-item img {
     max-width: 100%;
-    /* border: 2px solid red; */
   }
 
   /* HOVER */
+
+  .remove-padding p {
+    margin: 8px;
+  }
+
   .hover-text-style {
-    padding: 8px;
     font-size: 16px;
     font-weight: 400;
     letter-spacing: 0.2px;
@@ -450,11 +432,12 @@
   .hover-animation {
     position: absolute;
     top: 0;
-    max-height: 0;
+    max-height: 0%;
     overflow: hidden;
     color: white;
     width: 100%;
     background-color: #333333;
+    padding: 0px;
   }
   .grid-item:hover .hover-animation {
     position: absolute;
@@ -475,6 +458,7 @@
     bottom: 0;
     height: 100%;
     width: 100%;
+    overflow: scroll;
     z-index: 232323233232;
     cursor: pointer;
   }
@@ -505,8 +489,6 @@
     padding-bottom: 20px;
     padding-bottom: 1.45%;
   }
-
-  /* break */
 
   .info-item-5 {
     width: 50%;
@@ -557,14 +539,9 @@
     transform: translate(-50%, -50%);
   }
 
-  .buffer-image {
-    max-width: 100%;
-  }
-
   .overlay-styles {
     z-index: 1000;
     height: 100%;
-    /* z-index: 911111111111111; */
   }
 
   /* PROJECT LANDING PICTURE */
@@ -581,13 +558,12 @@
   }
 
   .landing-picture-container {
-    /* width: auto; */
+    width: auto;
     height: 100%;
   }
 
   .landing-picture {
     max-height: 100%;
-    /* max-width: 100%;  */
   }
 
   /* PROJECT VIEW - TWO LINE DESCRIPTION SECTION */
@@ -755,6 +731,10 @@
   }
 
   /* HOVER */
+
+  .remove-padding p {
+    margin: 8px;
+  }
   .hover-text-style {
     padding: 13px;
     font-weight: 400;
@@ -778,30 +758,6 @@
     width: 100%;
     transition: max-height 0.8s;
     background-color: #333333;
-  }
-
-  /* FOOTER CSS */
-  .main-footer-container {
-    color: #000000;
-    font-weight: 400;
-    font-size: 1em;
-    background: #f3f2f2;
-    margin: 0%;
-  }
-
-  .footer-flex {
-    margin: 0%;
-    padding-top: 0.9%;
-    padding-bottom: 0.9%;
-    display: flex;
-    justify-content: space-between;
-    height: 100%;
-    align-items: center;
-  }
-
-  .footer-container div {
-    margin-right: 2.5%;
-    margin-left: 2.5%;
   }
 
   .info-grid-parent {
@@ -1096,7 +1052,11 @@
     text-decoration: none;
   }
 
-  /* ADDED TITLES */
+  /* ADDED TITLES & remove dang.html padding  */
+  .remove-padding p {
+    margin: 0px;
+  }
+
   .project-title {
     display: block;
     font-size: 16px;
@@ -1134,10 +1094,6 @@
     /* border: 1px solid red; */
   }
 
-  .optional-size {
-    max-width: 46.7%;
-  }
-
   .grid-item img {
     max-width: 100%;
   }
@@ -1158,7 +1114,7 @@
     height: 100%;
     backdrop-filter: blur(8px);
     z-index: 2323232332322;
-    /* border: 5px solid red; */
+    overflow: scroll;
   }
 
   .info-content-styles {
@@ -1227,10 +1183,6 @@
     max-width: 300px;
     max-height: 300px;
     transform: translate(-50%, -50%);
-  }
-
-  .buffer-image {
-    max-width: 100%;
   }
 
   .project-nav {
@@ -1400,6 +1352,8 @@
     cursor: pointer;
     font-size: 14px;
     line-height: 18.4px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   .right-nav-element {
@@ -1454,7 +1408,6 @@
     color: inherit;
     text-decoration: none;
   }
-  /* end */
 
   /* ADDED TITLES */
   .project-title {
@@ -1502,36 +1455,6 @@
     max-width: 100%;
   }
 
-  .justify-image-frame {
-    max-width: 50%;
-    margin-right: auto;
-    margin-left: auto;
-    /* border:5px solid red; */
-  }
-
-  .main-footer-container {
-    color: #000000;
-    font-weight: 400;
-    font-size: 1em;
-    background: #f3f2f2;
-    margin: 0%;
-  }
-
-  .footer-flex {
-    margin: 0%;
-    padding-top: 0.9%;
-    padding-bottom: 0.9%;
-    display: flex;
-    justify-content: space-between;
-    height: 100%;
-    align-items: center;
-  }
-
-  .footer-container div {
-    margin-right: 2.5%;
-    margin-left: 2.5%;
-  }
-
   .info-grid-parent {
     position: fixed;
     top: 0;
@@ -1549,6 +1472,7 @@
     height: 100%;
     backdrop-filter: blur(8px);
     z-index: 2323232332322;
+    overflow: scroll;
   }
 
   .info-content-styles {
@@ -1568,7 +1492,10 @@
     padding: 15px;
     cursor: default;
   }
-
+  /* HIDE HOVER & REMOVE PADDING FROM dang.html*/
+  .remove-padding p {
+    margin: 0px;
+  }
   .hide-hover {
     display: none;
   }
@@ -1619,10 +1546,6 @@
     max-width: 300px;
     max-height: 300px;
     transform: translate(-50%, -50%);
-  }
-
-  .buffer-image {
-    max-width: 100%;
   }
 
   /* OVERLAY STYLES */
