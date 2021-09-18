@@ -9,8 +9,6 @@ import { AnimatePresence } from "framer-motion";
 function App() {
   return (
     <BrowserRouter basename="/">
-      <Header />
-      <Grid />
       <AnimatePresence>
         <Switch>
           <Route path="/" component={HomePage} exact></Route>
