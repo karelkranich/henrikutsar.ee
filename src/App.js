@@ -13,7 +13,10 @@ function App() {
       <Grid />
       <AnimatePresence>
         <Switch>
-          <Route path="/" component={HomePage} exact></Route>
+          {/* <Route path="/" component={HomePage} exact> */}
+          {/* <Header /> */}
+          {/* <Grid /> */}
+          {/* </Route> */}
           <Route path={`/:slug`} component={ProjectView}></Route>
         </Switch>
       </AnimatePresence>
