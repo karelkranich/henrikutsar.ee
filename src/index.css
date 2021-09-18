@@ -477,6 +477,8 @@
     font-size: 20px;
     padding: 1.7% 2.5% 1.7% 2.5%;
     line-height: 1.5em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   .info-grid-container {
