@@ -43,7 +43,7 @@ export default function ProjectView() {
 
     const fetchData = async () => {
       const results = await axios(
-        `https://henrikutsar.ee/admin/wp-json/acf/v3/projektid?slug[]=${slug}`
+        `https://admin.henrikutsar.ee/wp-json/acf/v3/projektid?slug[]=${slug}`
       );
 
       setIsOpen(true);

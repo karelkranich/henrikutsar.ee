@@ -16,7 +16,7 @@ export default function Projects() {
 
     const fetchData = async () => {
       const results = await axios(
-        "https://henrikutsar.ee/admin/wp-json/wp/v2/projektid/"
+        "https://admin.henrikutsar.ee/wp-json/wp/v2/projektid/"
       );
       setPosts(results.data);
     };
@@ -46,7 +46,7 @@ export default function Projects() {
                     src={post.acf.thumbnaili_foto.url}
                     alt={post.slug}
                   />
-
+                  {/* {console.log(post.acf)} */}
                   <img
                     className="smaller-screen-view"
                     src={post.acf.thumbnaili_foto.sizes.medium_large}
