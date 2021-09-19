@@ -1,10 +1,12 @@
 import React from "react";
 import { animated } from "react-spring";
+import { motion } from "framer-motion";
 
 function infoModal({ open, style, close }) {
   const BACKGROUND_BLUR = {
     backgroundColor: " rgba(0, 0, 0, 0.25)",
   };
+
   if (!open) {
     document.querySelector("body").style.overflow = "unset";
 
@@ -21,7 +23,14 @@ function infoModal({ open, style, close }) {
           close();
         }}
       >
-        <animated.div style={style}>
+        <motion.div
+          initial={{
+            transform: "translateY(-100%)",
+          }}
+          animate={{ transform: "translateY(0%)" }}
+          exit={{ transform: "translateY(0%)" }}
+          transition={({ duration: 0.12 }, { ease: "easeInOut" })}
+        >
           <div
             className="info-content-styles"
             // style={CONTENT_STYLES}
@@ -83,7 +92,7 @@ function infoModal({ open, style, close }) {
               </div>
             </div>
           </div>
-        </animated.div>
+        </motion.div>
       </div>
     );
   }
