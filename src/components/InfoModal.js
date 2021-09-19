@@ -49,7 +49,8 @@ function infoModal({ open, style, close }) {
                 <div className="info-item info-item-3">
                   Kompetents: Adobe Creative Cloud, Figma, MailerLite, Mailchimp
                   <div className="info-item info-item-4">
-                    Veebilehe arendus: Karel Kranich
+                    Veebilehe arendus:
+                    <a href="mailto:karelkranich@gmail.com">Karel Kranich</a>
                   </div>
                 </div>
 
