@@ -1,5 +1,4 @@
 import React from "react";
-import { animated } from "react-spring";
 import { motion } from "framer-motion";
 
 function infoModal({ open, style, close }) {
