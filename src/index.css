@@ -156,11 +156,12 @@
     font-weight: 400;
     font-family: Helvetica;
     color: white;
-    background-color: #333333;
+    background-color: #292929;
+
   }
 
   .main-info-grid-container {
-    font-weight: 300;
+    font-weight: 400;
     cursor: default;
     font-size: 28px;
     height: 100%;
@@ -452,12 +453,13 @@
     height: 100%;
     font-family: Helvetica;
     color: white;
-    background-color: #333333;
+    background-color: #292929;
+ 
   }
 
   .main-info-grid-container {
     cursor: default;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 20px;
     padding: 1.7% 2.5% 1.7% 2.5%;
     line-height: 1.5em;
@@ -762,13 +764,14 @@
     font-weight: 300;
     font-family: Helvetica;
     color: white;
-    background-color: #333333;
+    background-color: #292929;
+
   }
 
   .main-info-grid-container {
     font-size: 20px;
     line-height: 1.6em;
-
+    font-weight:400;
     padding: 1.7% 2.5% 1.7% 2.5%;
   }
 
@@ -912,12 +915,13 @@
     font-weight: 300;
     font-family: Helvetica;
     color: white;
-    background-color: #333333;
+    background-color: #292929;
+
   }
 
   .main-info-grid-container {
     font-size: clamp(0.6rem, 1.5vw, 0.926em);
-
+    font-weight: 400;
     line-height: clamp(1.2em, 4vw, 1.4em);
 
     line-height: 30px;
@@ -1096,7 +1100,8 @@
     font-weight: 300;
     font-family: Helvetica;
     color: white;
-    background-color: #333333;
+    background-color: #292929;
+
     padding: 15px;
     cursor: default;
   }
@@ -1104,6 +1109,7 @@
   .main-info-grid-container {
     font-size: 16px;
     line-height: 21px;
+    font-weight: 400;
   }
 
   .hide-hover {
@@ -1447,7 +1453,8 @@
     font-weight: 400;
     font-family: Helvetica;
     color: white;
-    background-color: #333333;
+    background-color: #292929;
+
   }
 
   .main-info-grid-container {
@@ -1457,6 +1464,7 @@
     line-height: 20px;
     padding: 15px;
     cursor: default;
+    font-weight: 400;
   }
   /* HIDE HOVER & REMOVE PADDING FROM dang.html*/
   .remove-padding p {

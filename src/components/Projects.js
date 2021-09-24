@@ -30,7 +30,7 @@ export default function Projects() {
         <div className="grid-container">
           {posts &&
             posts.map((post) => (
-              <div key={post.id} className="grid-item ">
+              <div key={post.id} className="grid-item">
                 <Link to={`/${post.slug}`}>
                   <Hover>
                     <div
@@ -40,13 +40,11 @@ export default function Projects() {
                       }}
                     />
                   </Hover>
-
                   <img
                     className="bigger-screen-view"
                     src={post.acf.thumbnaili_foto.url}
                     alt={post.slug}
                   />
-                  {/* {console.log(post.acf)} */}
                   <img
                     className="smaller-screen-view"
                     src={post.acf.thumbnaili_foto.sizes.medium_large}

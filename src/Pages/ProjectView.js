@@ -20,30 +20,13 @@ export default function ProjectView() {
   });
 
   useEffect(() => {
-    // RERENDER IF SIZE CHANGES
-    function handleResize() {
-      if (targetRef.current) {
-        setDimensions({
-          width: targetRef.current.offsetWidth,
-        });
-      }
-    }
-    // TO AFFIRM THE WIDTH IS CORRECT
-    if (posts.length > 0) {
-      handleResize();
-    }
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [posts]);
-
-  useEffect(() => {
     // TO MAKE SURE THE BODY OVERFLOW, WHEN PROJECT IS OPEN, IS NEVER UNSET
     function hashHandler() {
       document.querySelector("body").style.overflow = "hidden";
     }
     window.addEventListener("hashchange", hashHandler, false);
 
-    // GET THE DATA FRM WP API
+    // GET THE DATA FROM WP API
     const fetchData = async () => {
       const results = await axios(
         `https://admin.henrikutsar.ee/wp-json/acf/v3/projektid?slug[]=${slug}`
@@ -56,6 +39,24 @@ export default function ProjectView() {
     fetchData();
     hashHandler();
   }, [slug]);
+
+  useEffect(() => {
+    // RERENDER IF SIZE CHANGES
+    function handleResize() {
+      if (targetRef.current) {
+        setDimensions({
+          width: targetRef.current.offsetWidth,
+        });
+      }
+    }
+    // TO AFFIRM THE WIDTH IS CORRECT
+    if (posts.length > 0) {
+      handleResize();
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [posts]);
 
   const LONGER_PARAGRAPH_DESCRIPTION = {
     paddingTop: "3.4%",
@@ -75,6 +76,14 @@ export default function ProjectView() {
     document.querySelector("body").style.overflow = "unset";
     history.push("/");
   };
+
+  if (!isOpen) {
+    return (
+      <div className="main-buffer-container">
+        <div className="buffer-container"></div>
+      </div>
+    );
+  }
   if (isOpen) {
     return ReactDom.createPortal(
       <div>
@@ -295,13 +304,6 @@ export default function ProjectView() {
           ))}
       </div>,
       document.getElementById("project-view")
-    );
-  }
-  if (!isOpen) {
-    return (
-      <div className="main-buffer-container">
-        <div className="buffer-container"></div>
-      </div>
     );
   }
 }
