@@ -305,7 +305,6 @@
     font-family: "Helvetica";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* font-family: "HelveticaNeue-Light"; */
   }
   html,
   body {
@@ -313,6 +312,7 @@
     -webkit-text-size-adjust: 100%;
     margin: 0;
     padding: 0;
+    overflow: unset;
   }
 
   .switch-wrapper {

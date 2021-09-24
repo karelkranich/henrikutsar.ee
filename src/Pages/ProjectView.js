@@ -41,7 +41,7 @@ export default function ProjectView() {
     function hashHandler() {
       document.querySelector("body").style.overflow = "hidden";
     }
-    window.addEventListener("hashchange", hashHandler, true);
+    window.addEventListener("hashchange", hashHandler, false);
 
     // GET THE DATA FRM WP API
     const fetchData = async () => {
