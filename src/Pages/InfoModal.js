@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-function infoModal({ open, style, close }) {
+function infoModal({ open, close }) {
   const BACKGROUND_BLUR = {
     backgroundColor: " rgba(0, 0, 0, 0.25)",
   };
@@ -61,11 +61,10 @@ function infoModal({ open, style, close }) {
                     <a href="mailto:karelkranich@gmail.com"> Karel Kranich</a>
                   </div>
                 </div>
-
+                {/* Larger INFO-MODAL-LAYOUT */}
                 <div className="info-item info-item-5 computer-info-layout">
                   Henri Kutsar OÜ <div>Reg nr: 12224294</div>
                 </div>
-
                 <div className="info-item info-item-6 computer-info-layout">
                   <a href="tel:372-529-3741">+372 529 3741</a>
                   <div>
@@ -73,7 +72,7 @@ function infoModal({ open, style, close }) {
                   </div>
                 </div>
 
-                {/* MOBILE-INFO-MODAL-LAYOUT */}
+                {/* smaller INFO-MODAL-LAYOUT */}
                 <div className="mobile-info-layout">
                   <div className="info-item info-item-5">
                     Henri Kutsar OÜ <div>Reg nr: 12224294</div>

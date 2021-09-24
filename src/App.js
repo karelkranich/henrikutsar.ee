@@ -1,7 +1,7 @@
 import React from "react";
 import HomePage from "./components/HomePage";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import ProjectView from "./components/ProjectView";
+import ProjectView from "./Pages/ProjectView";
 import { AnimatePresence } from "framer-motion";
 
 function App() {
