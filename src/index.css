@@ -437,7 +437,7 @@
   .info-overlay-styles {
     position: fixed;
     top: 0;
-    overflow: hidden;
+    /* overflow: hidden; */
     left: 0;
     right: 0;
     bottom: 0;
@@ -538,7 +538,6 @@
     padding: 22px;
     display: flex;
     backdrop-filter: blur(8px);
-
     justify-content: center;
   }
 
