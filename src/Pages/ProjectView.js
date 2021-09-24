@@ -54,8 +54,6 @@ export default function ProjectView() {
       handleResize();
     }
 
-    {console.log()}
-
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, [posts]);
