@@ -12,7 +12,7 @@ export default function Projects() {
     function hashHandler() {
       document.querySelector("body").style.overflow = "unset";
     }
-    window.addEventListener("hashchange", hashHandler, false);
+    window.addEventListener("popstate", hashHandler, false);
 
     const fetchData = async () => {
       const results = await axios(
