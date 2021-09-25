@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ReactDom from "react-dom";
 import axios from "axios";
@@ -18,8 +18,10 @@ export default function ProjectView() {
   const [isOpen, setIsOpen] = useState(false);
 
   // GET THE WIDTH OF IMAGE ORDER TO SET WIDTH OF DESCRIPTION CONTAINER
-
-  
+  // const ref = useRef();
+  // const [dimensions, setDimensions] = useState({
+  //   width: window.innerWidth,
+  // });
 
   useEffect(() => {
     // TO MAKE SURE THE BODY OVERFLOW, WHEN PROJECT IS OPEN, IS NEVER UNSET
@@ -60,8 +62,6 @@ export default function ProjectView() {
   //   return () => window.removeEventListener("resize", handleResize);
   // }, [posts]);
   const resizeObserver = useResizeObserver();
-
-  
 
   const LONGER_PARAGRAPH_DESCRIPTION = {
     paddingTop: "3.4%",
