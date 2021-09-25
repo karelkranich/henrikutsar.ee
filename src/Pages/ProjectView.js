@@ -4,19 +4,23 @@ import ReactDom from "react-dom";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { motion } from "framer-motion";
+import useResizeObserver from "./useResizeObserver";
 
 export default function ProjectView() {
+  // test
+  // const { ref, width = 1, height = 1 } = useResizeObserver<HTMLDivElement>();
+
   // FETCH DATA FROM WORDPRESS REST API
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState(null);
 
   const { slug } = useParams();
   // TO SET THE BUFFER
   const [isOpen, setIsOpen] = useState(false);
 
   // GET THE WIDTH OF IMAGE ORDER TO SET WIDTH OF DESCRIPTION CONTAINER
-  const targetRef = useRef();
+  const ref = useRef();
   const [dimensions, setDimensions] = useState({
-    width: 0,
+    width: window.innerWidth,
   });
 
   useEffect(() => {
@@ -31,6 +35,7 @@ export default function ProjectView() {
       const results = await axios(
         `https://admin.henrikutsar.ee/wp-json/acf/v3/projektid?slug[]=${slug}`
       );
+
       setIsOpen(true);
       setPosts(results.data);
     };
@@ -39,27 +44,26 @@ export default function ProjectView() {
     hashHandler();
   }, [slug]);
 
-  useEffect(() => {
-    // RERENDER IF SIZE CHANGES
-    function handleResize() {
-      if (targetRef.current) {
-        setDimensions({
-          width: targetRef.current.offsetWidth,
-        });
-      }
-    }
-    // TO AFFIRM THE WIDTH IS CORRECT
-    if (posts.length > 0) {
-      handleResize();
-    }
+  // useEffect(() => {
+  //   // RERENDER IF SIZE CHANGES
+  //   function handleResize() {
+  //     if (targetRef.current) {
+  //       setDimensions({
+  //         width: targetRef.current.offsetWidth,
+  //       });
+  //     }
+  //   }
+  //   // TO AFFIRM THE WIDTH IS CORRECT
+  //   if (posts.length > 0) {
+  //     handleResize();
+  //   }
 
-    // console.log(targetRef.current.width);
+  //   window.addEventListener("resize", handleResize);
+  //   return () => window.removeEventListener("resize", handleResize);
+  // }, [posts]);
+  const resizeObserver = useResizeObserver();
 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [posts]);
-
-  console.log(dimensions.width)
+  console.log(dimensions.width);
 
   const LONGER_PARAGRAPH_DESCRIPTION = {
     paddingTop: "3.4%",
@@ -92,14 +96,18 @@ export default function ProjectView() {
       <div>
         {posts &&
           posts.map((projects) => (
+            // WRAPPER
             <div
               key={projects.id}
               className="overlay-styles"
               style={OVERYLAY_STYLES}
               onClick={routeChange}
             >
+              {/* PARENT */}
               <div className="larger-project-view">
+                {/* CHILD */}
                 <motion.div
+                  className="main-landing-picture-container"
                   initial={{
                     transform: "translateY(-100%)",
                   }}
@@ -107,21 +115,19 @@ export default function ProjectView() {
                   exit={{ transform: "translateY(0%)" }}
                   transition={({ duration: 0.2 }, { ease: "easeInOut" })}
                 >
-                  <div className="main-landing-picture-container">
-                    <div
-                      onClick={(e) => {
-                        // do not close projectview if anything inside projectview content is clicked
-                        e.stopPropagation();
-                      }}
-                      className="landing-picture-container"
-                    >
-                      <img
-                        ref={targetRef}
-                        className="landing-picture"
-                        src={projects.acf.viewporti_foto.url}
-                        alt={slug}
-                      />
-                    </div>
+                  <div
+                    onClick={(e) => {
+                      // do not close projectview if anything inside projectview content is clicked
+                      e.stopPropagation();
+                    }}
+                    className="landing-picture-container"
+                  >
+                    <img
+                      className="landing-picture"
+                      src={projects.acf.viewporti_foto.url}
+                      alt={slug}
+                      ref={resizeObserver.ref}
+                    />
                   </div>
                 </motion.div>
 
@@ -132,14 +138,13 @@ export default function ProjectView() {
                     backgroundColor: projects.acf.projektivaate_taustavarv,
                   }}
                 >
+                  {/* CHILD */}
                   <div
                     onClick={(e) => {
                       // do not close projectview if anything inside projectview content is clicked
                       e.stopPropagation();
                     }}
-                    // style={DESCRIPTIONS_CONTAINER}
-
-                    style={{ width: dimensions.width }}
+                    style={{ width: resizeObserver.width }}
                     className="descriptions-container"
                   >
                     <div>
@@ -151,6 +156,7 @@ export default function ProjectView() {
                               __html: projects.acf.vasak_esimene_tekst,
                             }}
                           />
+
                           <div
                             className="remove-padding"
                             dangerouslySetInnerHTML={{

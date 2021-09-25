@@ -25,7 +25,7 @@ export default function Projects() {
   }, []);
 
   return (
-    <>
+    <div>
       <section className="image-section ">
         <div className="grid-container">
           {posts &&
@@ -64,6 +64,6 @@ export default function Projects() {
             ))}
         </div>
       </section>
-    </>
+    </div>
   );
 }
