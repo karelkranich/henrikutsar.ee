@@ -16,7 +16,7 @@ export default function ProjectView() {
   // GET THE WIDTH OF IMAGE ORDER TO SET WIDTH OF DESCRIPTION CONTAINER
   const targetRef = useRef();
   const [dimensions, setDimensions] = useState({
-    width: window.innerWidth,
+    width: 0,
   });
 
   useEffect(() => {
@@ -31,7 +31,6 @@ export default function ProjectView() {
       const results = await axios(
         `https://admin.henrikutsar.ee/wp-json/acf/v3/projektid?slug[]=${slug}`
       );
-
       setIsOpen(true);
       setPosts(results.data);
     };
@@ -54,9 +53,13 @@ export default function ProjectView() {
       handleResize();
     }
 
+    // console.log(targetRef.current.width);
+
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, [posts]);
+
+  console.log(dimensions.width)
 
   const LONGER_PARAGRAPH_DESCRIPTION = {
     paddingTop: "3.4%",
