@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 export default function ProjectView() {
   // FETCH DATA FROM WORDPRESS REST API
-  const [posts, setPosts] = useState("");
+  const [posts, setPosts] = useState([]);
 
   const { slug } = useParams();
   // TO SET THE BUFFER
@@ -37,7 +37,7 @@ export default function ProjectView() {
 
     fetchData();
     hashHandler();
-  }, [slug]);
+  }, slug);
 
   useEffect(() => {
     // RERENDER IF SIZE CHANGES
