@@ -18,10 +18,10 @@ export default function ProjectView() {
   const [isOpen, setIsOpen] = useState(false);
 
   // GET THE WIDTH OF IMAGE ORDER TO SET WIDTH OF DESCRIPTION CONTAINER
-  const ref = useRef();
-  const [dimensions, setDimensions] = useState({
-    width: window.innerWidth,
-  });
+  // const ref = useRef();
+  // const [dimensions, setDimensions] = useState({
+  //   width: window.innerWidth,
+  // });
 
   useEffect(() => {
     // TO MAKE SURE THE BODY OVERFLOW, WHEN PROJECT IS OPEN, IS NEVER UNSET
