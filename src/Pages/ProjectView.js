@@ -63,7 +63,7 @@ export default function ProjectView() {
   // }, [posts]);
   const resizeObserver = useResizeObserver();
 
-  console.log(dimensions.width);
+  
 
   const LONGER_PARAGRAPH_DESCRIPTION = {
     paddingTop: "3.4%",
