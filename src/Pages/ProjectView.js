@@ -64,7 +64,7 @@ export default function ProjectView() {
   const resizeObserver = useResizeObserver();
 
   const LONGER_PARAGRAPH_DESCRIPTION = {
-    paddingTop: "3.4%",
+    marginTop: "3.4%",
     display: "block",
   };
 
@@ -111,7 +111,7 @@ export default function ProjectView() {
                   }}
                   animate={{ transform: "translateY(0%)" }}
                   exit={{ transform: "translateY(0%)" }}
-                  transition={({ duration: 0.2 }, { ease: "easeInOut" })}
+                  transition={{ duration: 0.35 }}
                 >
                   <div
                     onClick={(e) => {

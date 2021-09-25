@@ -11,7 +11,7 @@ function infoModal({ open, close }) {
 
     return null;
   } else if (open) {
-    // document.querySelector("body").style.overflow = "hidden";
+    document.querySelector("body").style.overflow = "hidden";
 
     return (
       <div
@@ -57,8 +57,12 @@ function infoModal({ open, close }) {
                 <div className="info-item info-item-3">
                   Kompetents: Adobe Creative Cloud, Figma, MailerLite, Mailchimp
                   <div className="info-item info-item-4">
-                    Veebilehe arendus:
-                    <a href="mailto:karelkranich@gmail.com"> Karel Kranich</a>
+                    <span href="mailto:karelkranich@gmail.com">
+                      Veebilehe arendus:
+                    </span>{" "}
+                    <div className="karel-kranich-element">
+                      <a href="mailto:karelkranich@gmail.com">Karel Kranich</a>
+                    </div>
                   </div>
                 </div>
                 {/* Larger INFO-MODAL-LAYOUT */}
@@ -66,9 +70,19 @@ function infoModal({ open, close }) {
                   Henri Kutsar OÜ <div>Reg nr: 12224294</div>
                 </div>
                 <div className="info-item info-item-6 computer-info-layout">
-                  <a href="tel:372-529-3741">+372 529 3741</a>
+                  <div className="no-underline">
+                    <a href="tel:372-529-3741">+372 529 3741</a>
+                  </div>
                   <div>
-                    <a href="mailto:info@henrikutsar.ee">info@henrikutsar.ee</a>
+                    <div className="no-underline">
+                      <a href="mailto:info@henrikutsar.ee">Meiliaadress</a>
+                    </div>
+                    ,{" "}
+                    <div className="no-underline-two">
+                      <a href="http://www.instagram.com/henrikutsardisain/">
+                        Instagram
+                      </a>
+                    </div>
                   </div>
                 </div>
 
