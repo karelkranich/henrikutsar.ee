@@ -37,7 +37,7 @@ export default function ProjectView() {
 
     fetchData();
     hashHandler();
-  }, slug);
+  }, [slug]);
 
   useEffect(() => {
     // RERENDER IF SIZE CHANGES
