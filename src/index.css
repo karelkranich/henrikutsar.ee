@@ -203,6 +203,7 @@
 
   .info-item-4 {
     text-underline-offset: 2px;
+    text-decoration-thickness: 2px;
   }
   .karel-kranich-element {
     display: inline-block;
@@ -214,7 +215,6 @@
   }
   .info-item-6 {
     width: 50%;
-
     padding-left: 1.02%;
     text-decoration-thickness: 2px;
     text-underline-offset: 2px;
@@ -528,6 +528,7 @@
   }
   .info-item-4 {
     text-underline-offset: 2px;
+    text-decoration-thickness: 2px;
   }
   .karel-kranich-element {
     display: inline-block;
@@ -877,6 +878,7 @@
   /* break */
   .info-item-4 {
     text-underline-offset: 2px;
+    text-decoration-thickness: 2px;
   }
   .karel-kranich-element {
     display: inline-block;
@@ -888,7 +890,6 @@
   }
   .info-item-6 {
     width: 50%;
-
     padding-left: 1.02%;
     text-decoration-thickness: 2px;
     text-underline-offset: 2px;
