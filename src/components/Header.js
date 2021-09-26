@@ -19,9 +19,10 @@ const Header = () => {
             INFO & KONTAKT
           </div>
           <div>
-            <InfoModal open={isOpen} 
-            close={() => setIsOpen(false)}>
-            </InfoModal>
+            <InfoModal
+              open={isOpen}
+              close={() => setIsOpen(false)}
+            ></InfoModal>
           </div>
         </div>
       </nav>

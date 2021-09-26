@@ -475,7 +475,7 @@
     bottom: 0;
     height: 100%;
     width: 100%;
-    overflow: scroll;
+    
     z-index: 232323233232;
     cursor: pointer;
   }
@@ -485,6 +485,7 @@
     height: 100%;
     font-family: Helvetica;
     color: white;
+
     background-color: #292929;
   }
 
