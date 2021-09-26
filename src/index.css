@@ -1550,7 +1550,7 @@
     left: 0;
     right: 0;
     z-index: 232323233232;
-    overflow:hidden;
+    
   }
 
   .info-overlay-styles {
@@ -1561,7 +1561,7 @@
     bottom: 0;
     height: 100%;
     z-index: 2323232332322;
-    overflow:hidden;
+ 
   }
 
   .info-content-styles {
