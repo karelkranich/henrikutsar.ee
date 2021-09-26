@@ -12,7 +12,7 @@ function infoModal({ open, close }) {
     return null;
   } else if (open) {
     document.querySelector("body").style.overflow = "hidden";
-   
+
     return (
       <div
         style={BACKGROUND_BLUR}
@@ -32,11 +32,10 @@ function infoModal({ open, close }) {
         >
           <div
             className="info-content-styles"
-            // style={CONTENT_STYLES}
-            // onClick={(e) => {
-            //   // do not close modal if anything inside modal content is clicked
-            //   e.stopPropagation();
-            // }}
+            onClick={(e) => {
+              // do not close modal if anything inside modal content is clicked
+              e.stopPropagation();
+            }}
           >
             <div className="main-info-grid-container">
               <div className="info-grid-container">
