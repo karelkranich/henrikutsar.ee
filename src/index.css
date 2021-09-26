@@ -575,7 +575,6 @@
     top: 0;
     z-index: 1;
     width: 100vw;
-    /* backdrop-filter: blur(13px); */
   }
 
   .buffer-container {
@@ -929,7 +928,7 @@
     padding: 22px;
     display: flex;
     justify-content: center;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(13px);
   }
 
   .landing-picture-container {
@@ -1184,7 +1183,6 @@
     max-width: 50%;
     margin-right: auto;
     margin-left: auto;
-    /* border:5px solid red; */
   }
 
   .info-overlay-styles {
