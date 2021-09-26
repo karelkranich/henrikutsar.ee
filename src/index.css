@@ -270,7 +270,7 @@
     height: 100vh;
     padding: 22px;
     display: flex;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(13px);
     justify-content: center;
   }
 
