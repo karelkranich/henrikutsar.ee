@@ -12,7 +12,7 @@ function infoModal({ open, close }) {
     return null;
   } else if (open) {
     document.querySelector("body").style.overflow = "hidden";
-    document.querySelector("html").style.overflow = "hidden";
+    document.querySelector("body").style.position = "relative";
     return (
       <div
         style={BACKGROUND_BLUR}
