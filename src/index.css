@@ -1257,7 +1257,6 @@
     top: 0;
     z-index: 1999;
     width: 100vw;
-    backdrop-filter: blur(8px);
   }
 
   .buffer-container {
@@ -1616,7 +1615,6 @@
     top: 0;
     z-index: 19999;
     width: 100vw;
-    backdrop-filter: blur(8px);
   }
 
   .buffer-container {
