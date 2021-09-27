@@ -608,7 +608,6 @@
   .landing-picture-container {
     width: auto;
     height: 100%;
-    /* border:5px solid red;  */
   }
 
   .landing-picture {
@@ -759,7 +758,6 @@
     max-height: 100%;
     margin-right: auto;
     margin-left: auto;
-    /* border: 1px solid red; */
   }
 
   .optional-size {
@@ -774,11 +772,9 @@
     max-width: 50%;
     margin-right: auto;
     margin-left: auto;
-    /* border:5px solid red; */
   }
 
   /* HOVER */
-
   .remove-padding p {
     margin: 8px;
   }
@@ -985,7 +981,6 @@
     display: inline-block;
   }
 
-  /* PROJECT VIEW PICTURES SECTION */
   /* PROJECT VIEW PICTURES SECTION */
   .project-view-pictures {
     margin-top: 4.73%;
@@ -1307,7 +1302,6 @@
   }
 
   .project-info-contact-element {
-    /* border: 1px solid red; */
     font-size: clamp(12px, 3.5vw, 16px);
     line-height: 3vh;
     font-size: 16px;

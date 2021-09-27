@@ -64,7 +64,7 @@ function infoModal({ open, close }) {
                     </div>
                   </div>
                 </div>
-                {/* Larger INFO-MODAL-LAYOUT */}
+
                 <div className="info-item info-item-5 computer-info-layout">
                   Henri Kutsar OÜ <div>Reg nr: 12224294</div>
                 </div>
@@ -85,7 +85,6 @@ function infoModal({ open, close }) {
                   </div>
                 </div>
 
-                {/* smaller INFO-MODAL-LAYOUT */}
                 <div className="mobile-info-layout">
                   <div className="info-item info-item-5">
                     Henri Kutsar OÜ <div>Reg nr: 12224294</div>

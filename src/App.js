@@ -10,7 +10,6 @@ function App() {
       <HomePage />
       <AnimatePresence>
         <Switch>
-          {/* <Route path="/" component={HomePage} exact></Route> */}
           <Route path={`/:slug`} component={ProjectView}></Route>
         </Switch>
       </AnimatePresence>

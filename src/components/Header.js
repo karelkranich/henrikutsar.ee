@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import InfoModal from "../Pages/InfoModal";
 
 const Header = () => {
-  // SET INFO & CONTACT MODAL STATE
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -19,10 +18,7 @@ const Header = () => {
             INFO & KONTAKT
           </div>
           <div>
-            <InfoModal
-              open={isOpen}
-              close={() => setIsOpen(false)}
-            ></InfoModal>
+            <InfoModal open={isOpen} close={() => setIsOpen(false)}></InfoModal>
           </div>
         </div>
       </nav>

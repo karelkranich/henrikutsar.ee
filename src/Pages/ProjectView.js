@@ -7,30 +7,20 @@ import { motion } from "framer-motion";
 import useResizeObserver from "./useResizeObserver";
 
 export default function ProjectView() {
-  // test
-  // const { ref, width = 1, height = 1 } = useResizeObserver<HTMLDivElement>();
-
-  // FETCH DATA FROM WORDPRESS REST API
   const [posts, setPosts] = useState(null);
 
   const { slug } = useParams();
-  // TO SET THE BUFFER
+
   const [isOpen, setIsOpen] = useState(false);
 
-  // GET THE WIDTH OF IMAGE ORDER TO SET WIDTH OF DESCRIPTION CONTAINER
-  // const ref = useRef();
-  // const [dimensions, setDimensions] = useState({
-  //   width: window.innerWidth,
-  // });
+  const resizeObserver = useResizeObserver();
 
   useEffect(() => {
-    // TO MAKE SURE THE BODY OVERFLOW, WHEN PROJECT IS OPEN, IS NEVER UNSET
     function hashHandler() {
       document.querySelector("body").style.overflow = "hidden";
     }
     window.addEventListener("hashchange", hashHandler, false);
 
-    // GET THE DATA FROM WP API
     const fetchData = async () => {
       const results = await axios(
         `https://admin.henrikutsar.ee/wp-json/acf/v3/projektid?slug[]=${slug}`
@@ -44,25 +34,6 @@ export default function ProjectView() {
     hashHandler();
   }, [slug]);
 
-  // useEffect(() => {
-  //   // RERENDER IF SIZE CHANGES
-  //   function handleResize() {
-  //     if (targetRef.current) {
-  //       setDimensions({
-  //         width: targetRef.current.offsetWidth,
-  //       });
-  //     }
-  //   }
-  //   // TO AFFIRM THE WIDTH IS CORRECT
-  //   if (posts.length > 0) {
-  //     handleResize();
-  //   }
-
-  //   window.addEventListener("resize", handleResize);
-  //   return () => window.removeEventListener("resize", handleResize);
-  // }, [posts]);
-  const resizeObserver = useResizeObserver();
-
   const LONGER_PARAGRAPH_DESCRIPTION = {
     marginTop: "3.4%",
     display: "block",
@@ -75,7 +46,6 @@ export default function ProjectView() {
     overflow: "scroll",
   };
 
-  // GO BACK TO PREVIOUS PAGE, CHANGE BODY OVERFLOW TO UNSET
   let history = useHistory();
   const routeChange = () => {
     document.querySelector("body").style.overflow = "unset";
@@ -94,16 +64,13 @@ export default function ProjectView() {
       <div>
         {posts &&
           posts.map((projects) => (
-            // WRAPPER
             <div
               key={projects.id}
               className="overlay-styles"
               style={OVERYLAY_STYLES}
               onClick={routeChange}
             >
-              {/* PARENT */}
               <div className="larger-project-view">
-                {/* CHILD */}
                 <motion.div
                   className="main-landing-picture-container"
                   initial={{
@@ -129,14 +96,12 @@ export default function ProjectView() {
                   </div>
                 </motion.div>
 
-                {/* FIRST PARAGRAPHS AFTER PROJECT PICTURE*/}
                 <div
                   className="main-description-container"
                   style={{
                     backgroundColor: projects.acf.projektivaate_taustavarv,
                   }}
                 >
-                  {/* CHILD */}
                   <div
                     onClick={(e) => {
                       // do not close projectview if anything inside projectview content is clicked
@@ -179,7 +144,7 @@ export default function ProjectView() {
                         </div>
                       </div>
                     </div>
-                    {/* LONGER, DETAILED PARAGRAPH */}
+
                     <div
                       className="longer-paragraph-description"
                       style={LONGER_PARAGRAPH_DESCRIPTION}
@@ -191,7 +156,7 @@ export default function ProjectView() {
                         }}
                       />
                     </div>
-                    {/* PROJECT PICTURES*/}
+
                     <div className="project-view-pictures">
                       {projects.acf.pildid &&
                         projects.acf.pildid.map((pictures) => (
@@ -237,7 +202,6 @@ export default function ProjectView() {
                     </div>
                   </div>
 
-                  {/* FIRST PARAGRAPHS AFTER PROJECT PICTURE*/}
                   <div
                     className="main-description-container"
                     style={{
@@ -276,7 +240,7 @@ export default function ProjectView() {
                           />
                         </div>
                       </div>
-                      {/* LONGER, DETAILED PARAGRAPH */}
+
                       <div
                         className="longer-paragraph-description"
                         style={LONGER_PARAGRAPH_DESCRIPTION}
@@ -288,7 +252,7 @@ export default function ProjectView() {
                           }}
                         />
                       </div>
-                      {/* PROJECT PICTURES*/}
+
                       <div className="project-view-pictures">
                         {projects.acf.pildid &&
                           projects.acf.pildid.map((pictures) => (
