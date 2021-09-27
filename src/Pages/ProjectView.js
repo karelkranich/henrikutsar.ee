@@ -101,7 +101,9 @@ export default function ProjectView() {
               style={OVERYLAY_STYLES}
               onClick={routeChange}
             >
+              {/* PARENT */}
               <div className="larger-project-view">
+                {/* CHILD */}
                 <motion.div
                   className="main-landing-picture-container"
                   initial={{
@@ -134,6 +136,7 @@ export default function ProjectView() {
                     backgroundColor: projects.acf.projektivaate_taustavarv,
                   }}
                 >
+                  {/* CHILD */}
                   <div
                     onClick={(e) => {
                       // do not close projectview if anything inside projectview content is clicked
