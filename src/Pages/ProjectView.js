@@ -52,49 +52,145 @@ export default function ProjectView() {
     history.push("/");
   };
 
-  if (!isOpen) {
-    return (
-      <div className="main-buffer-container">
-        <div className="buffer-container"></div>
-      </div>
-    );
-  }
-  if (isOpen) {
-    return ReactDom.createPortal(
-      <div>
-        {posts &&
-          posts.map((projects) => (
-            <div
-              key={projects.id}
-              className="overlay-styles"
-              style={OVERYLAY_STYLES}
-              onClick={routeChange}
-            >
-              <div className="larger-project-view">
-                <motion.div
-                  className="main-landing-picture-container"
-                  initial={{
-                    transform: "translateY(-100%)",
+  return ReactDom.createPortal(
+    <div>
+      {isOpen ? (
+        posts &&
+        posts.map((projects) => (
+          <div
+            key={projects.id}
+            className="overlay-styles"
+            style={OVERYLAY_STYLES}
+            onClick={routeChange}
+          >
+            <div className="larger-project-view">
+              <motion.div
+                className="main-landing-picture-container"
+                initial={{
+                  transform: "translateY(-100%)",
+                }}
+                animate={{ transform: "translateY(0%)" }}
+                exit={{ transform: "translateY(0%)" }}
+                transition={{ duration: 0.35 }}
+              >
+                <div
+                  onClick={(e) => {
+                    // do not close projectview if anything inside projectview content is clicked
+                    e.stopPropagation();
                   }}
-                  animate={{ transform: "translateY(0%)" }}
-                  exit={{ transform: "translateY(0%)" }}
-                  transition={{ duration: 0.35 }}
+                  className="landing-picture-container"
                 >
+                  <img
+                    className="landing-picture"
+                    src={projects.acf.viewporti_foto.url}
+                    alt={slug}
+                    ref={resizeObserver.ref}
+                  />
+                </div>
+              </motion.div>
+
+              <div
+                className="main-description-container"
+                style={{
+                  backgroundColor: projects.acf.projektivaate_taustavarv,
+                }}
+              >
+                <div
+                  onClick={(e) => {
+                    // do not close projectview if anything inside projectview content is clicked
+                    e.stopPropagation();
+                  }}
+                  style={{ width: resizeObserver.width }}
+                  className="descriptions-container"
+                >
+                  <div>
+                    <div className="project-details">
+                      <div className="project-client">
+                        <div
+                          className="remove-padding"
+                          dangerouslySetInnerHTML={{
+                            __html: projects.acf.vasak_esimene_tekst,
+                          }}
+                        />
+
+                        <div
+                          className="remove-padding"
+                          dangerouslySetInnerHTML={{
+                            __html: projects.acf.vasak_teine_tekst,
+                          }}
+                        />
+                      </div>
+
+                      <div className="year-cvi">
+                        <div
+                          className="remove-padding"
+                          dangerouslySetInnerHTML={{
+                            __html: projects.acf.parem_esimene_tekst,
+                          }}
+                        />
+                        <div
+                          className="remove-padding"
+                          dangerouslySetInnerHTML={{
+                            __html: projects.acf.parem_teine_tekst,
+                          }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+
                   <div
-                    onClick={(e) => {
-                      // do not close projectview if anything inside projectview content is clicked
-                      e.stopPropagation();
-                    }}
-                    className="landing-picture-container"
+                    className="longer-paragraph-description"
+                    style={LONGER_PARAGRAPH_DESCRIPTION}
                   >
-                    <img
-                      className="landing-picture"
-                      src={projects.acf.viewporti_foto.url}
-                      alt={slug}
-                      ref={resizeObserver.ref}
+                    <div
+                      className="remove-padding"
+                      dangerouslySetInnerHTML={{
+                        __html: projects.acf.kirjeldus,
+                      }}
                     />
                   </div>
-                </motion.div>
+
+                  <div className="project-view-pictures">
+                    {projects.acf.pildid &&
+                      projects.acf.pildid.map((pictures) => (
+                        <div key={pictures.id} className="project-picture-size">
+                          <img src={pictures.url} alt={slug} />
+                        </div>
+                      ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              className="smaller-project-view"
+              onClick={(e) => {
+                // do not close projectview if anything inside projectview content is clicked
+                e.stopPropagation();
+              }}
+            >
+              <motion.div
+                initial={{
+                  transform: "translateY(-100%)",
+                }}
+                animate={{ transform: "translateY(0%)" }}
+                exit={{ transform: "translateY(0%)" }}
+                transition={({ duration: 0.2 }, { ease: "easeInOut" })}
+              >
+                <div
+                  style={{
+                    backgroundColor: projects.acf.projektivaate_taustavarv,
+                  }}
+                  className="main-landing-picture-container"
+                >
+                  <div className="landing-picture-container">
+                    <img
+                      className="landing-picture"
+                      src={projects.acf.viewporti_foto.sizes.medium_large}
+                      alt={slug}
+                    />
+                  </div>
+                </div>
 
                 <div
                   className="main-description-container"
@@ -102,46 +198,36 @@ export default function ProjectView() {
                     backgroundColor: projects.acf.projektivaate_taustavarv,
                   }}
                 >
-                  <div
-                    onClick={(e) => {
-                      // do not close projectview if anything inside projectview content is clicked
-                      e.stopPropagation();
-                    }}
-                    style={{ width: resizeObserver.width }}
-                    className="descriptions-container"
-                  >
-                    <div>
-                      <div className="project-details">
-                        <div className="project-client">
-                          <div
-                            className="remove-padding"
-                            dangerouslySetInnerHTML={{
-                              __html: projects.acf.vasak_esimene_tekst,
-                            }}
-                          />
+                  <div className="descriptions-container">
+                    <div className="project-details">
+                      <div className="project-client">
+                        <div
+                          className="remove-padding"
+                          dangerouslySetInnerHTML={{
+                            __html: projects.acf.vasak_esimene_tekst,
+                          }}
+                        />
+                        <div
+                          className="remove-padding"
+                          dangerouslySetInnerHTML={{
+                            __html: projects.acf.vasak_teine_tekst,
+                          }}
+                        />
+                      </div>
 
-                          <div
-                            className="remove-padding"
-                            dangerouslySetInnerHTML={{
-                              __html: projects.acf.vasak_teine_tekst,
-                            }}
-                          />
-                        </div>
-
-                        <div className="year-cvi">
-                          <div
-                            className="remove-padding"
-                            dangerouslySetInnerHTML={{
-                              __html: projects.acf.parem_esimene_tekst,
-                            }}
-                          />
-                          <div
-                            className="remove-padding"
-                            dangerouslySetInnerHTML={{
-                              __html: projects.acf.parem_teine_tekst,
-                            }}
-                          />
-                        </div>
+                      <div className="year-cvi">
+                        <div
+                          className="remove-padding"
+                          dangerouslySetInnerHTML={{
+                            __html: projects.acf.parem_esimene_tekst,
+                          }}
+                        />
+                        <div
+                          className="remove-padding"
+                          dangerouslySetInnerHTML={{
+                            __html: projects.acf.parem_teine_tekst,
+                          }}
+                        />
                       </div>
                     </div>
 
@@ -164,117 +250,22 @@ export default function ProjectView() {
                             key={pictures.id}
                             className="project-picture-size"
                           >
-                            <img src={pictures.url} alt={slug} />
+                            <img src={pictures.sizes.medium_large} alt={slug} />
                           </div>
                         ))}
                     </div>
                   </div>
                 </div>
-              </div>
-
-              <div
-                className="smaller-project-view"
-                onClick={(e) => {
-                  // do not close projectview if anything inside projectview content is clicked
-                  e.stopPropagation();
-                }}
-              >
-                <motion.div
-                  initial={{
-                    transform: "translateY(-100%)",
-                  }}
-                  animate={{ transform: "translateY(0%)" }}
-                  exit={{ transform: "translateY(0%)" }}
-                  transition={({ duration: 0.2 }, { ease: "easeInOut" })}
-                >
-                  <div
-                    style={{
-                      backgroundColor: projects.acf.projektivaate_taustavarv,
-                    }}
-                    className="main-landing-picture-container"
-                  >
-                    <div className="landing-picture-container">
-                      <img
-                        className="landing-picture"
-                        src={projects.acf.viewporti_foto.sizes.medium_large}
-                        alt={slug}
-                      />
-                    </div>
-                  </div>
-
-                  <div
-                    className="main-description-container"
-                    style={{
-                      backgroundColor: projects.acf.projektivaate_taustavarv,
-                    }}
-                  >
-                    <div className="descriptions-container">
-                      <div className="project-details">
-                        <div className="project-client">
-                          <div
-                            className="remove-padding"
-                            dangerouslySetInnerHTML={{
-                              __html: projects.acf.vasak_esimene_tekst,
-                            }}
-                          />
-                          <div
-                            className="remove-padding"
-                            dangerouslySetInnerHTML={{
-                              __html: projects.acf.vasak_teine_tekst,
-                            }}
-                          />
-                        </div>
-
-                        <div className="year-cvi">
-                          <div
-                            className="remove-padding"
-                            dangerouslySetInnerHTML={{
-                              __html: projects.acf.parem_esimene_tekst,
-                            }}
-                          />
-                          <div
-                            className="remove-padding"
-                            dangerouslySetInnerHTML={{
-                              __html: projects.acf.parem_teine_tekst,
-                            }}
-                          />
-                        </div>
-                      </div>
-
-                      <div
-                        className="longer-paragraph-description"
-                        style={LONGER_PARAGRAPH_DESCRIPTION}
-                      >
-                        <div
-                          className="remove-padding"
-                          dangerouslySetInnerHTML={{
-                            __html: projects.acf.kirjeldus,
-                          }}
-                        />
-                      </div>
-
-                      <div className="project-view-pictures">
-                        {projects.acf.pildid &&
-                          projects.acf.pildid.map((pictures) => (
-                            <div
-                              key={pictures.id}
-                              className="project-picture-size"
-                            >
-                              <img
-                                src={pictures.sizes.medium_large}
-                                alt={slug}
-                              />
-                            </div>
-                          ))}
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
+              </motion.div>
             </div>
-          ))}
-      </div>,
-      document.getElementById("project-view")
-    );
-  }
+          </div>
+        ))
+      ) : (
+        <div className="main-buffer-container">
+          <div className="buffer-container"></div>
+        </div>
+      )}
+    </div>,
+    document.getElementById("project-view")
+  );
 }

@@ -3,16 +3,14 @@ import { motion } from "framer-motion";
 
 function infoModal({ open, close }) {
   const BACKGROUND_BLUR = {
-    backgroundColor: " rgba(0, 0, 0, 0.25)",
+    backgroundColor: "rgba(0, 0, 0, 0.25)",
   };
 
   if (!open) {
     document.querySelector("body").style.overflow = "unset";
-
     return null;
-  } else if (open) {
+  } else {
     document.querySelector("body").style.overflow = "hidden";
-
     return (
       <div
         style={BACKGROUND_BLUR}
