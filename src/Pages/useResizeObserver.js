@@ -3,7 +3,7 @@ import { ResizeObserver as ResizeObserverPolyfill } from "@juggle/resize-observe
 
 const ResizeObserver = window.ResizeObserver || ResizeObserverPolyfill;
 
-export default function ResizeObserver() {
+export default function useResizeObserver() {
   const [size, setSize] = useState({ width: 0 });
   const resizeObserver = useRef(null);
 
@@ -32,5 +32,5 @@ export default function ResizeObserver() {
     []
   );
 
-  return { ref, width: size.width };
+  return { ref, width: size.width};
 }
