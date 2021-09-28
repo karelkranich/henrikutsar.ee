@@ -1,4 +1,4 @@
-This website was created for an Estonian freelance graphic designer, Henri kutsar.
+This website was created for an Estonian freelance graphic designer, Henri Kutsar.
 
 Frontend: ReactJS
 Backend: Headless Wordpress CMS
