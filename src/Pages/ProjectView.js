@@ -4,7 +4,7 @@ import ReactDom from "react-dom";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { motion } from "framer-motion";
-import ResizeObserver from "./ResizeObserver";
+import useResizeObserver from "./useResizeObserver";
 
 export default function ProjectView() {
   const [posts, setPosts] = useState(null);
@@ -13,7 +13,7 @@ export default function ProjectView() {
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const resizeObserver = ResizeObserver();
+  const resizeObserver = useResizeObserver();
 
   useEffect(() => {
     function hashHandler() {
