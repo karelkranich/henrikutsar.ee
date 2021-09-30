@@ -5,6 +5,7 @@ This website was created for an Estonian freelance graphic designer, Henri Kutsa
 
 
 **PROJECT VIEW**
+
 The idea was to create a minimalistic, yet with a clean anad animated user interface. The project view can be seen by clicking on the grid.
 
 The project view is designed and written by focusing on small details. On larger screen, an user can leave the view by clicking on specific parts of the overlay. 
