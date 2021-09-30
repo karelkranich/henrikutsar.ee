@@ -17,4 +17,5 @@ Deployment: Netlify
 
 
 Responsive view for mobile & larger screens
+
 Project view & modal animation: Framer Motion Library
