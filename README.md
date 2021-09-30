@@ -4,6 +4,7 @@ Responsive view for mobile & larger screens
 This website was created for an Estonian freelance graphic designer, Henri Kutsar.
 
 
+
 **PROJECT VIEW**
 
 The idea was to create a minimalistic, yet with a clean anad animated user interface. The project view can be seen by clicking on the grid.
