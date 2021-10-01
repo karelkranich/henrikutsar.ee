@@ -1139,8 +1139,8 @@
 
   .project-title {
     display: block;
-    font-size: 16px;
-    line-height: 18.4px;
+    font-size: 20px;
+    line-height: 25px;
     text-align: center;
     padding-top: 8px;
     padding-bottom: 19px;
@@ -1506,8 +1506,8 @@
   /* ADDED TITLES */
   .project-title {
     display: block;
-    font-size: 16px;
-    line-height: 18.4px;
+    font-size: 20px;
+    line-height: 25px;
     text-align: center;
     padding-top: 8px;
     padding-bottom: 19px;
