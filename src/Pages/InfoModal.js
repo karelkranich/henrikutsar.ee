@@ -38,10 +38,10 @@ function infoModal({ open, close }) {
             <div className="main-info-grid-container">
               <div className="info-grid-container">
                 <div className="info-item info-item-1">
-                  Olen Võrumaalt pärit, üle Eesti tegutsev vabakutseline
-                  graafiline disainer. Keskendun peamiselt visuaalsete
-                  identiteetide väljatöötamisele ning kõikvõimalikele trüki- ja
-                  digilahendustele. Kuulmiseni!
+                  Tere! Olen Võrumaa juurtega, üle terve Eesti tegutsev
+                  vabakutseline graafiline disainer. Tegelen peamiselt
+                  visuaalsete identiteetide väljatöötamise, aga ka kõikvõimalike
+                  väiksemate trüki- ja digilahendustega. Kuulmiseni.
                 </div>
 
                 <div className="info-item info-item-2">
@@ -64,7 +64,8 @@ function infoModal({ open, close }) {
                 </div>
 
                 <div className="info-item info-item-5 computer-info-layout">
-                  Henri Kutsar OÜ <div>Reg nr: 12224294</div>
+                  Henri Kutsar Disain OÜ
+                  <div>Reg nr: 16330461</div>
                 </div>
                 <div className="info-item info-item-6 computer-info-layout">
                   <div className="no-underline">
@@ -85,7 +86,8 @@ function infoModal({ open, close }) {
 
                 <div className="mobile-info-layout">
                   <div className="info-item info-item-5">
-                    Henri Kutsar OÜ <div>Reg nr: 12224294</div>
+                    Henri Kutsar Disain OÜ
+                    <div>Reg nr: 16330461</div>
                   </div>
 
                   <div className="info-item info-item-6">
