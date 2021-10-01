@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Hover from "./Hover";
 import { Link } from "react-router-dom";
 import axios from "axios";
+
 export default function Projects() {
   const [posts, setPosts] = useState([]);
 
@@ -46,7 +47,7 @@ export default function Projects() {
                     className="smaller-screen-view"
                     src={post.acf.thumbnaili_foto.sizes.medium_large}
                     alt={post.slug}
-                  ></img>
+                  />
                 </Link>
 
                 <div className="project-title project-title-2">
