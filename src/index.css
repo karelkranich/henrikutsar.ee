@@ -419,8 +419,8 @@
 
   .grid-container {
     display: grid;
-    grid-gap: clamp(20px, 2vw, 28px);
-    /* column-gap: clamp(20px, 2vw, 28px); */
+    /* grid-gap: clamp(20px, 2vw, 28px); */
+    column-gap: clamp(20px, 2vw, 28px);
     row-gap: clamp(20px, 1.6vw, 26px);
     margin: 0% 2.45% 2.45% 2.45%;
     grid-template-columns: repeat(2, 1fr);
@@ -747,9 +747,9 @@
 
   .grid-container {
     display: grid;
-    /* grid-gap: clamp(13px, 2vw, 28px); */
-    column-gap: clamp(13px, 2vw, 28px);
-    row-gap: clamp(8px, 1.5vw, 28px);
+   /* grid-gap: clamp(13px, 2vw, 28px); */
+   column-gap: clamp(13px, 2vw, 28px);
+   row-gap: clamp(8px, 1.5vw, 28px);
     margin: 0% 2.45% 2.45% 2.45%;
     grid-template-columns: repeat(2, 1fr);
   }
