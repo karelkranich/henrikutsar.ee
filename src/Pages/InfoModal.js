@@ -91,12 +91,12 @@ function infoModal({ open, close }) {
                   </div>
 
                   <div className="info-item info-item-6">
-                    <a className="test" href="tel:372-529-3741">
-                      +372 529 3741
-                    </a>
+                    <a href="tel:372-529-3741">+372 529 3741</a>
                     <div>
-                      <a href="mailto:info@henrikutsar.ee">
-                        info@henrikutsar.ee
+                      <a href="mailto:info@henrikutsar.ee">Meiliaadress</a>
+                      ,{" "}
+                      <a href="http://www.instagram.com/henrikutsardisain/">
+                        Instagram
                       </a>
                     </div>
                   </div>
