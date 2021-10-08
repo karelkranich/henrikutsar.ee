@@ -1,4 +1,5 @@
 **Live view: henrikutsar.ee**
+
 Responsive view for mobile & larger screens
 
 This website was created for an Estonian freelance graphic designer, Henri Kutsar.
