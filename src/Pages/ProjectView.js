@@ -7,11 +7,9 @@ import { motion } from "framer-motion";
 import useResizeObserver from "./useResizeObserver";
 
 export default function ProjectView() {
-  const [posts, setPosts] = useState(null);
+  const [posts, setPosts] = useState([]);
 
   const { slug } = useParams();
-
-  const [isOpen, setIsOpen] = useState(false);
 
   const resizeObserver = useResizeObserver();
 
@@ -25,8 +23,6 @@ export default function ProjectView() {
       const results = await axios(
         `https://admin.henrikutsar.ee/wp-json/acf/v3/projektid?slug[]=${slug}`
       );
-
-      setIsOpen(true);
       setPosts(results.data);
     };
 
@@ -34,6 +30,7 @@ export default function ProjectView() {
     hashHandler();
   }, [slug]);
 
+  console.log(posts);
   const LONGER_PARAGRAPH_DESCRIPTION = {
     marginTop: "3.4%",
     display: "block",
@@ -54,7 +51,7 @@ export default function ProjectView() {
 
   return ReactDom.createPortal(
     <div>
-      {isOpen ? (
+      {posts.length > 0 ? (
         posts &&
         posts.map((projects) => (
           <div
@@ -75,7 +72,6 @@ export default function ProjectView() {
               >
                 <div
                   onClick={(e) => {
-                    // do not close projectview if anything inside projectview content is clicked
                     e.stopPropagation();
                   }}
                   className="landing-picture-container"
@@ -97,7 +93,6 @@ export default function ProjectView() {
               >
                 <div
                   onClick={(e) => {
-                    // do not close projectview if anything inside projectview content is clicked
                     e.stopPropagation();
                   }}
                   style={{ width: resizeObserver.width }}
@@ -165,7 +160,6 @@ export default function ProjectView() {
             <div
               className="smaller-project-view"
               onClick={(e) => {
-                // do not close projectview if anything inside projectview content is clicked
                 e.stopPropagation();
               }}
             >
