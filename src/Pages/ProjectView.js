@@ -30,7 +30,6 @@ export default function ProjectView() {
     hashHandler();
   }, [slug]);
 
-  console.log(posts);
   const LONGER_PARAGRAPH_DESCRIPTION = {
     marginTop: "3.4%",
     display: "block",
