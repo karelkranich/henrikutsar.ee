@@ -1,8 +1,7 @@
 import React from "react";
 import HomePage from "./components/HomePage";
-import { BrowserRouter, Route, Routes, Outlet } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ProjectView from "./Pages/ProjectView";
-// import Admin from "./components/Admin";
 
 function App() {
   return (
@@ -11,7 +10,6 @@ function App() {
         <Route path="/" element={<HomePage />}>
           <Route path={`:slug`} element={<ProjectView />} />
         </Route>
-        {/* <Route path={`/admin`} element={<Admin />} /> */}
       </Routes>
     </BrowserRouter>
   );
