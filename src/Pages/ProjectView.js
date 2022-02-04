@@ -2,16 +2,15 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ReactDom from "react-dom";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import useResizeObserver from "./useResizeObserver";
 
 export default function ProjectView() {
   const [posts, setPosts] = useState([]);
-
   const { slug } = useParams();
-
   const resizeObserver = useResizeObserver();
+  let navigate = useNavigate();
 
   useEffect(() => {
     function hashHandler() {
@@ -42,10 +41,9 @@ export default function ProjectView() {
     overflow: "scroll",
   };
 
-  let history = useHistory();
   const routeChange = () => {
     document.querySelector("body").style.overflow = "unset";
-    history.push("/");
+    navigate("/");
   };
 
   return ReactDom.createPortal(
