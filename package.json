@@ -6,7 +6,6 @@
   "dependencies": {
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
-    "@mui/material": "^5.4.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -27,6 +26,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
+    "preinstall": "npm install --legacy-peer-deps || true",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
