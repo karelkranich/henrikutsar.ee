@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import hkIcon from "../images/HK-icon.jpg";
 
 function infoModal({ open, close }) {
   const BACKGROUND_BLUR = {
@@ -16,91 +17,112 @@ function infoModal({ open, close }) {
         style={BACKGROUND_BLUR}
         className="info-overlay-styles"
         onClick={() => {
-          // close modal when outside of modal is clicked
           close();
         }}
       >
         <motion.div
-          initial={{
-            transform: "translateY(-100%)",
-          }}
+          initial={{ transform: "translateY(-100%)" }}
           animate={{ transform: "translateY(0%)" }}
           exit={{ transform: "translateY(0%)" }}
-          transition={({ duration: 0.12 }, { ease: "easeInOut" })}
+          transition={{ duration: 0.12, ease: "easeInOut" }}
         >
           <div
             className="info-content-styles"
             onClick={(e) => {
-              // do not close modal if anything inside modal content is clicked
               e.stopPropagation();
             }}
           >
-            <div className="main-info-grid-container">
-              <div className="info-grid-container">
-                <div className="info-item info-item-1">
-                  Tere! Olen Võrumaa juurtega, üle terve Eesti tegutsev
-                  vabakutseline graafiline disainer. Tegelen peamiselt
-                  visuaalsete identiteetide väljatöötamise, aga ka kõikvõimalike
-                  väiksemate trüki- ja digilahendustega. Kuulmiseni.
-                </div>
+            <div
+              className="info-content-styles"
+              onClick={(e) => {
+                e.stopPropagation();
+              }}
+            >
+              <div className="desktop-modal-container">
+                <div className="modal-flex-container">
+                  <div className="image-container">
+                    <img src={hkIcon} alt="HK Icon" className="rounded-image" />
+                  </div>
 
-                <div className="info-item info-item-2">
-                  Kliente: Võru Linnavalitsus, Eesti Kunstiakadeemia, Miina
-                  Härma Gümnaasium, Võru Kesklinna Kool, Vana-Võromaa
-                  kultuurikoda, Kai kunstikeskus, PRAXIS Mõttekoda, Von Krahli
-                  Aed, jt.
-                </div>
+                  <div className="content-container">
+                    <div className="text-content-block">
+                      Kliente & koostööpartnereid: Eesti Kunstiakadeemia, Kai
+                      kunstikeskus, Miina Härma Gümnaasium, MOMU Mootorispordi
+                      Muuseum, PRAXIS Mõttekoda, Re-Imagine Europe, Tallinna
+                      Kunstihoone, Tartu Elektriteater, Tütar galerii,
+                      Vana-Võromaa kultuurikoda, Von Krahli Aed, Võru Kesklinna
+                      Kool, Võru Linnavalitsus, jt.
+                    </div>
 
-                <div className="info-item info-item-3">
-                  Kompetents: Adobe Creative Cloud, Figma, MailerLite, Mailchimp
-                  <div className="info-item info-item-4">
-                    <span href="mailto:karelkranich@gmail.com">
-                      Veebilehe arendus:
-                    </span>{" "}
-                    <div className="karel-kranich-element">
-                      <a href="mailto:karelkranich@gmail.com">Karel Kranich</a>
+                    <div class="credentials-content-block">
+                      <div class="first-block">
+                        <div class="first-credentials-block">
+                          <div>Henri Kutsar Disain OÜ</div>
+                          <div>Reg nr: 16330461</div>
+                        </div>
+
+                        <div class="second-credentials-block">
+                          <div>
+                            <a href="tel:372-529-3741">+372 529 3741</a>
+                          </div>
+                          <div>
+                            <a href="mailto:info@henrikutsar.ee">
+                              info@henrikutsar.ee
+                            </a>
+                          </div>
+                          <div>
+                            <a href="http://www.instagram.com/henrikutsardisain/">
+                              Instagram
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="second-block">
+                        <div class="developed-by-block">
+                          <a href="mailto:karelkranich@gmail.com">
+                            Veebilehe arendus: Karel Kranich
+                          </a>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
 
-                <div className="info-item info-item-5 computer-info-layout">
-                  Henri Kutsar Disain OÜ
-                  <div>Reg nr: 16330461</div>
+            <div className="mobile-grid-container">
+              <div className="first-block">
+                <div className="image-container">
+                  <img src={hkIcon} alt="HK Icon" className="rounded-image" />
                 </div>
-                <div className="info-item info-item-6 computer-info-layout">
-                  <div className="no-underline">
-                    <a href="tel:372-529-3741">+372 529 3741</a>
-                  </div>
+                <div className="content-container">
                   <div>
-                    <div className="no-underline">
-                      <a href="mailto:info@henrikutsar.ee">Meiliaadress</a>
-                    </div>
-                    ,{" "}
-                    <div className="no-underline-two">
-                      <a href="http://www.instagram.com/henrikutsardisain/">
-                        Instagram
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mobile-info-layout">
-                  <div className="info-item info-item-5">
-                    Henri Kutsar Disain OÜ
+                    <div>Henri Kutsar Disain OÜ</div>
                     <div>Reg nr: 16330461</div>
                   </div>
 
-                  <div className="info-item info-item-6">
+                  <div>
                     <a href="tel:372-529-3741">+372 529 3741</a>
-                    <div>
-                      <a href="mailto:info@henrikutsar.ee">Meiliaadress</a>
-                      ,{" "}
-                      <a href="http://www.instagram.com/henrikutsardisain/">
-                        Instagram
-                      </a>
-                    </div>
+                    <a href="mailto:info@henrikutsar.ee">info@henrikutsar.ee</a>
+                    <a href="http://www.instagram.com/henrikutsardisain/">
+                      Instagram
+                    </a>
                   </div>
                 </div>
+              </div>
+              <div className="second-block">
+                <div>
+                  Kliente & koostööpartnereid: Eesti Kunstiakadeemia, Kai
+                  kunstikeskus, Miina Härma Gümnaasium, MOMU Mootorispordi
+                  Muuseum, PRAXIS Mõttekoda, Re-Imagine Europe, Tallinna
+                  Kunstihoone, Tartu Elektriteater, Tütar galerii, Vana-Võromaa
+                  kultuurikoda, Von Krahli Aed, Võru Kesklinna Kool, Võru
+                  Linnavalitsus, jt.
+                </div>
+                <a href="karelkranich@gmail.com">
+                  Veebilehe arendus: Karel Kranich
+                </a>
               </div>
             </div>
           </div>
