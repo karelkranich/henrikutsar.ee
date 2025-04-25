@@ -71,7 +71,7 @@ function infoModal({ open, close }) {
                             </a>
                           </div>
                           <div>
-                            <a href="http://www.instagram.com/henrikutsardisain/">
+                            <a href="https://www.instagram.com/henrikutsardesign/">
                               Instagram
                             </a>
                           </div>
@@ -105,7 +105,7 @@ function infoModal({ open, close }) {
                   <div>
                     <a href="tel:372-529-3741">+372 529 3741</a>
                     <a href="mailto:info@henrikutsar.ee">info@henrikutsar.ee</a>
-                    <a href="http://www.instagram.com/henrikutsardisain/">
+                    <a href="https://www.instagram.com/henrikutsardesign/">
                       Instagram
                     </a>
                   </div>
