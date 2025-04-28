@@ -161,6 +161,7 @@
   .mobile-grid-container {
     display: none;
   }
+
   .modal-flex-container {
     display: flex;
     flex-direction: row;
@@ -1140,7 +1141,7 @@
     display: initial;
     font-size: 16px;
     font-weight: 400;
-    padding: 0px 13px 0px 13px;
+    padding: 0px 13px 4px 13px;
     margin-top: 0px;
     line-height: 21px;
   }
@@ -1334,6 +1335,11 @@
     max-height: 100%;
     margin-right: auto;
     margin-left: auto;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
   }
 
   .grid-item img {
