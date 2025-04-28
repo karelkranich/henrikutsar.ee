@@ -165,7 +165,7 @@
     display: flex;
     flex-direction: row;
     font-size: clamp(1.2rem, 1.8vw, 2rem);
-    padding: 35px;
+    padding: 2.45%;
     line-height: 35px;
     box-sizing: border-box;
     height: auto;
@@ -501,7 +501,7 @@
     display: flex;
     flex-direction: row;
     font-size: clamp(1rem, 1.7vw, 1.5rem);
-    padding: 2.5%;
+    padding: 2.45%;
     line-height: 35px;
     box-sizing: border-box;
     height: auto;
@@ -671,7 +671,7 @@
     display: flex;
     flex-direction: row;
     font-size: clamp(1.1rem, 1.6vw, 1.5rem);
-    padding: 2.5%;
+    padding: 2.45%;
     line-height: 35px;
     box-sizing: border-box;
     height: auto;
@@ -849,9 +849,7 @@
     display: flex;
     flex-direction: row;
     font-size: clamp(1.2rem, 1.45vw, 1.3rem);
-    padding: 35px;
-    padding-left: 2.5%;
-    padding-right: 2.5%;
+    padding: 2.45%;
     font-weight: 400;
     line-height: 30px;
     box-sizing: border-box;
@@ -1004,9 +1002,8 @@
     display: flex;
     flex-direction: row;
     font-size: clamp(1.1rem, 1.5vw, 1.5rem);
-    padding: 35px;
-    padding-left: 2.5%;
-    padding-right: 2.5%;
+    padding-left: 2.45%;
+    padding-right: 2.45%;
     font-weight: 400;
     line-height: 28px;
     box-sizing: border-box;
@@ -1023,8 +1020,8 @@
     display: flex;
     flex-direction: row;
     font-size: clamp(1.1rem, 1.5vw, 1.3rem);
-    padding-left: 2.5%;
-    padding-right: 2.5%;
+    padding-left: 2.45%;
+    padding-right: 2.45%;
     font-weight: 400;
     line-height: 25px;
     box-sizing: border-box;
@@ -1141,10 +1138,9 @@
 
   .mobile-grid-container {
     display: initial;
-    padding: 13px 13px 10px 13px;
     font-size: 16px;
     font-weight: 400;
-    padding-top: 0px;
+    padding: 0px 13px 0px 13px;
     margin-top: 0px;
     line-height: 21px;
   }
@@ -1762,7 +1758,7 @@
   }
 
   .mobile-grid-container {
-    padding: 13px 13px 10px 13px;
+    padding: 15px 15px 10px 15px;
     font-size: 16px;
     font-weight: 400;
     line-height: 21px;
