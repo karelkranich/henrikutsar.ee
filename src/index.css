@@ -1392,6 +1392,10 @@
     display: none;
   }
 
+  .smaller-project-view {
+    display: block;
+  }
+
   /* Fetch API loading animation */
   .main-buffer-container {
     position: fixed;
@@ -1816,6 +1820,10 @@
   /* PROJECT VIEW CSS */
   .larger-project-view {
     display: none;
+  }
+
+  .smaller-project-view {
+    display: block;
   }
 
   /* Fetch API loading animation */
